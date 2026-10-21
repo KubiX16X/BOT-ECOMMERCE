@@ -1,0 +1,25 @@
+{
+  "name": "revion",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p packages/core && tsc -p apps/bot && npm run typecheck -w @revion/web",
+    "generuj": "tsx packages/core/src/cli.ts",
+    "bot": "npm run start -w @revion/bot",
+    "web": "npm run dev -w @revion/web"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

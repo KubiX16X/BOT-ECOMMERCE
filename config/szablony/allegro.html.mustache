@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<p>{{intro}}</p>
+<ul>
+<li><b>Produkt fabrycznie nowy</b></li>
+<li><b>Zwrot 14 dni</b></li>
+<li><b>Zdjęcia realistyczne produktu</b></li>
+</ul>
+<h2>Dlaczego warto</h2>
+<ul>
+{{#benefits}}
+<li><b>{{feature}}</b> – {{benefit}}</li>
+{{/benefits}}
+</ul>
+<h2>Specyfikacja</h2>
+<ul>
+{{#specs}}
+<li><b>{{name}}:</b> {{value}}</li>
+{{/specs}}
+</ul>
+<p>{{closing}}</p>
+<h2>Zawartość zestawu</h2>
+<ol>
+{{#setContents}}
+<li>{{item}}</li>
+{{/setContents}}
+</ol>

@@ -1,0 +1,20 @@
+<p class="lead">{{intro}}</p>
+<h2>Dlaczego warto</h2>
+<ul class="benefits">
+{{#benefits}}
+<li><strong>{{feature}}</strong> – {{benefit}}</li>
+{{/benefits}}
+</ul>
+<h2>Specyfikacja</h2>
+<table class="specs">
+{{#specs}}
+<tr><th>{{name}}</th><td>{{value}}</td></tr>
+{{/specs}}
+</table>
+<p>{{closing}}</p>
+<h2>Zawartość zestawu</h2>
+<ol>
+{{#setContents}}
+<li>{{item}}</li>
+{{/setContents}}
+</ol>

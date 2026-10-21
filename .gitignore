@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.local
+data/*
+!data/.gitkeep
+apps/web/.next/
+apps/web/next-env.d.ts
+*.tsbuildinfo
+.DS_Store
