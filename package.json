@@ -11,7 +11,8 @@
     "typecheck": "tsc -p packages/core && tsc -p apps/bot && npm run typecheck -w @revion/web",
     "generuj": "tsx packages/core/src/cli.ts",
     "bot": "npm run start -w @revion/bot",
-    "web": "npm run dev -w @revion/web"
+    "web": "npm run dev -w @revion/web",
+    "allegro": "tsx packages/core/src/allegro/cli.ts"
   },
   "devDependencies": {
     "@types/node": "^22.19.0",

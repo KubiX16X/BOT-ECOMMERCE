@@ -17,6 +17,8 @@ Klucze są w `.env` (poza repo). W nowej sesji poproś o `GEMINI_API_KEY` i nume
 
 Strona allegro.pl blokuje automaty (403) – nie obchodzić. Oficjalne API: aplikacja „Revion” zarejestrowana w apps.developer.allegro.pl jako **device_code**, cel „na swoje potrzeby”, uprawnienia: `sale:offers:read/write`, `sale:settings:read`, `orders:read/write`, `billing:read`, `profile:read`. Dane w `.env`: `ALLEGRO_CLIENT_ID`, `ALLEGRO_CLIENT_SECRET`, `ALLEGRO_USER_AGENT` (nagłówek User-Agent jest obowiązkowy w każdym zapytaniu – zły blokuje klucz). Autoryzacja: device flow – użytkownik dostaje link z kodem i klika „Zezwól”. Wyszukiwanie cudzych ofert (`GET /offers/listing`) wymaga osobnej weryfikacji przez Allegro.
 
+Połączenie konta: `npm run allegro -- polacz` (link dla użytkownika), potem w tle `npm run allegro -- czekaj`; test: `npm run allegro -- test`. Tokeny w `data/allegro-token.json`. Środowisko musi mieć w Allowed domains: `allegro.pl`, `api.allegro.pl`, `allegroimg.com`. W chmurowym środowisku Claude komendy sieciowe w Node uruchamiaj z `NODE_USE_ENV_PROXY=1` (inaczej `fetch` omija proxy i nie widzi allegro.pl).
+
 ## Zasady biznesowe
 
 - **Działalność nierejestrowana**: limit 10 813,50 zł przychodu na kwartał (2026).
