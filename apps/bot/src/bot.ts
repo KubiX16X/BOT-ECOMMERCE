@@ -1,10 +1,14 @@
 import {
   allegroImages,
   estimateImageCount,
+  describeOlxLimit,
+  findOlxCategory,
   findOlxLimit,
   generateOffer,
   getConfig,
-  getOlxLimits,
+  getUserOlxLimits,
+  searchOlxCategories,
+  seriesForLimit,
   MAX_SERIES,
   parseDelivery,
   savePack,
@@ -54,7 +58,8 @@ function newDraft(): Draft {
 }
 
 function categoryKeyboard(draft: Draft): InlineKeyboard {
-  const limits = getOlxLimits();
+  // Tylko kategorie już używane – pełna tabela OLX ma ~380 pozycji, resztę wyszukuje się po nazwie.
+  const limits = getUserOlxLimits();
   draft.categoryChoices = Object.keys(limits).sort((a, b) => a.localeCompare(b, "pl"));
   const kb = new InlineKeyboard();
   draft.categoryChoices.forEach((c, i) => kb.text(`${c} (${limits[c]})`, `cat:${i}`).row());
@@ -128,11 +133,17 @@ export function createBot(token: string, config?: BotConfig<Context>): Bot {
   });
 
   bot.command("limity", async (ctx) => {
-    const limits = getOlxLimits();
-    const lines = Object.entries(limits).map(([k, v]) => `• ${escapeHtml(k)}: <b>${v}</b>`);
-    await ctx.reply(lines.length ? `<b>Limity darmowych ogłoszeń OLX</b>\n${lines.join("\n")}` : "Brak zapisanych limitów.", {
-      parse_mode: "HTML",
-    });
+    const query = ctx.match.trim();
+    if (query) {
+      const found = searchOlxCategories(query, 15);
+      const lines = found.map((m) => `• ${escapeHtml(m.category)}: <b>${describeOlxLimit(m.limit)}</b>`);
+      return ctx.reply(lines.length ? lines.join("\n") : "Nie znalazłem takiej kategorii.", { parse_mode: "HTML" });
+    }
+    const lines = Object.entries(getUserOlxLimits()).map(([k, v]) => `• ${escapeHtml(k)}: <b>${v}</b>`);
+    await ctx.reply(
+      `${lines.length ? `<b>Twoje kategorie OLX</b>\n${lines.join("\n")}\n\n` : ""}Szukaj w tabeli OLX: /limity koce`,
+      { parse_mode: "HTML" },
+    );
   });
 
   bot.command("limit", async (ctx) => {
@@ -201,12 +212,12 @@ export function createBot(token: string, config?: BotConfig<Context>): Bot {
     const choice = ctx.match[1]!;
     if (choice === "new") {
       d.step = "categoryName";
-      return ctx.reply("Wpisz kategorię OLX, np. „Dom i Ogród > Ogród > Grille”.");
+      return ctx.reply("Wpisz kategorię OLX albo jej końcówkę, np. „Koce” albo „Dom i Ogród > Ogród > Grill”.");
     }
     const category = d.categoryChoices[Number(choice)];
     if (!category) return;
     d.category = category;
-    d.seriesCount = findOlxLimit(category) ?? 1;
+    d.seriesCount = findOlxLimit(category) || 1;
     d.step = "delivery";
     await ctx.reply(`Kategoria: ${category} → ${d.seriesCount} serie.\n🚚 Przewidywana dostawa (jak w ofercie źródłowej):`, {
       reply_markup: deliveryKeyboard,
@@ -264,13 +275,17 @@ export function createBot(token: string, config?: BotConfig<Context>): Bot {
         d.sourceUrl = extractUrl(text);
         return askCategory(ctx, d);
       case "categoryName": {
-        d.category = text;
-        const known = findOlxLimit(text);
-        if (known) {
-          d.seriesCount = known;
+        const match = findOlxCategory(text);
+        d.category = match?.category ?? text;
+        if (match && seriesForLimit(match.limit) > 0) {
+          d.seriesCount = seriesForLimit(match.limit);
           d.step = "delivery";
-          return ctx.reply(`Znam tę kategorię: ${known} serie.\n🚚 Przewidywana dostawa:`, { reply_markup: deliveryKeyboard });
+          return ctx.reply(`${match.category} – ${describeOlxLimit(match.limit)} → ${d.seriesCount} serie.\n🚚 Przewidywana dostawa:`, {
+            reply_markup: deliveryKeyboard,
+          });
         }
+        const hints = match ? [] : searchOlxCategories(text, 5).map((m) => m.category);
+        if (hints.length) return ctx.reply(`Doprecyzuj kategorię, pasuje kilka:\n${hints.join("\n")}`);
         d.step = "categoryLimit";
         return ctx.reply("Ile darmowych ogłoszeń masz w tej kategorii na OLX? (zapamiętam)", { reply_markup: limitKeyboard() });
       }

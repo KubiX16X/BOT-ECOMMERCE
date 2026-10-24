@@ -1,3 +1,1518 @@
 {
-  "Dom i Ogród > Ogród > Grille": 2
+ "Antyki i Kolekcje > Antyki > Antykwariat": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Karty kolekcjonerskie": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Pozostałe": {
+  "limit": 6,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stara Biżuteria": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stara ceramika": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stara porcelana": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare dewocjonalia": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare instrumenty": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare meble": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare oświetlenie": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare posrebrzane": {
+  "limit": 6,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare rowery": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare szkło": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare zabawki": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Stare zegary i zegarki": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Antyki > Zabytki techniki": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Akcesoria do alkoholi": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Birofilistyka": {
+  "limit": 20,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Filatelistyka": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Flagi": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Medale i odznaki": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Militaria": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Modelarstwo": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Nasiona konopi": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Numizmatyka": {
+  "limit": 12,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Pieniądz papierowy": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Pocztówki": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Pozostałe": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Skamieliny i minerały": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Kolekcje > Trafika": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Rękodzieło > Biżuteria - półprodukty": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Rękodzieło > Produkty rękodzielnicze": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Rękodzieło > Szycie i filcowanie": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Sztuka > Fotografia": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Sztuka > Grafika": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Sztuka > Malarstwo": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Sztuka > Plakat": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Sztuka > Rysunek": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Antyki i Kolekcje > Sztuka > Rzeźba": {
+  "limit": 15,
+  "dni": 30
+ },
+ "Budowa i Remont > Bramy garażowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Bramy i ogrodzenia": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Dachy": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Drewno": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Drzwi": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Elektryka": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Budowa i Remont > Fotowoltaika": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Garaże": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Hydraulika": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Budowa i Remont > Klimatyzacja i wentylacja": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Konstrukcje stalowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Kuchnia": {
+  "limit": 3,
+  "dni": 60
+ },
+ "Budowa i Remont > Maszyny budowlane": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Materiały sypkie": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Krzyże cmentarne": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Kwatery na cmentarzu": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Nagrobki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Pozostałe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Tablice cmentarne": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Urny": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Wazony cmentarne": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Znicze": {
+  "limit": 5,
+  "dni": 60
+ },
+ "Budowa i Remont > Nagrobki i akcesoria > Ławki cmentarne": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Narzędzia budowlane": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Oczyszczalnie i szamba": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Okna": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Podłogi": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Pozostałe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Płyty drogowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Płyty meblowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Rusztowania": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Schody": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Stal zbrojeniowa": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Stemple i szalunki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Systemy kominowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Budowa i Remont > Łazienka": {
+  "limit": 3,
+  "dni": 60
+ },
+ "Budowa i Remont > Ściany i elewacje": {
+  "limit": 3,
+  "dni": 60
+ },
+ "Dla Dzieci > Akcesoria dla niemowląt": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Artykuł szkolne": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Buciki": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Foteliki samochodowe": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Dla Dzieci > Odzież niemowlęca": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Pozostałe dla dzieci": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Ubranka dla chłopców": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Ubranka dla dziewczynek": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Wózki dziecięce": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Dla Dzieci > Zabawki": {
+  "limit": null,
+  "dni": 30
+ },
+ "Dla Dzieci > Zabawki > Pojazdy elektryczne": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Meble > Akcesoria meblowe": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Biblioteczki i witryny": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Biurka": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Blaty": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Fotele": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Komody": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Konsole": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Kredensy": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Krzesła": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Krzesła biurowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Materace": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Meble dla dzieci": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Meble kuchenne": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Meble łazienkowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Narożniki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Pozostałe meble": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Pufy": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Półki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Regały": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Sofy i kanapy": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Stoliki kawowe i ławy": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Stoły": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Stoły i krzesła (zestaw)": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Szafki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Szafki na buty": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Szafki nocne": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Szafki RTV": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Szafy": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Taborety i hokery": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Toaletki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Wieszaki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Zestawy mebli": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Ławki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Meble > Łóżka": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Narzędzia > Agregaty prądotwórcze": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Betoniarki": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Części do narzędzi": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Elektronarzędzia": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Imadła i ściski": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Myjki ciśnieniowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Narzędzia ręczne": {
+  "limit": 5,
+  "dni": 90
+ },
+ "Dom i Ogród > Narzędzia > Osprzęt do narzędzi": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Pistolety malarskie": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Pompy wodne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Pozostałe Narzędzia": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Przyrządy miernicze": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Spawarki i lutownice": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Sprężarki i kompresory": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Narzędzia > Zestawy narzędzi": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Dom i Ogród > Ogrzewanie > Akcesoria do kotłów i pieców": {
+  "limit": 3,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Części do kotłów i pieców": {
+  "limit": 3,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Grzejniki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Kominki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Kotły i piece": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Ogrzewanie przenośne": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Opał": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Podgrzewacze wody": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Pompy ciepła": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Pozostałe Ogrzewanie": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogrzewanie > Zbiorniki LPG": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Architektura ogrodowa": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Baseny": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Dekoracje ogrodowe": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Donice": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Grill": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Huśtawki i place zabaw": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Kosiarki": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Maszyny ogrodowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Meble ogrodowe": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Narzędzia ogrodowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Nawadnianie": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Nawozy": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Oświetlenie ogrodowe": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Podłoża ogrodowe": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Pozostałe Ogród": {
+  "limit": 1,
+  "dni": 60
+ },
+ "Dom i Ogród > Ogród > Rośliny": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Dom i Ogród > Oświetlenie > Abażury i klosze": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Akcesoria i osprzęt": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Girlandy świetlne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Halogeny i naświetlacze": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Lampy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Oprawy oświetleniowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Oświetlenie zewnętrzne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Pozostałe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Taśmy LED": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Oświetlenie > Żarówki i świetlówki": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Pozostałe dom i ogród": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Supermarket": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Akcesoria łazienkowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Dekoracje": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Dywany i dywaniki": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Koce": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Koszyki": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Lustra": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Obrusy i serwetki": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Ozdoby okolicznościowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Pokrowce": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Pozostałe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Pościel": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Przybory kuchenne": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Pudełka": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Rośliny doniczkowe": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Ręczniki": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Szkatułki": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Torby na zakupy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Woski i olejki": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Wystrój okien": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Zastawa stołowa": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Zegary": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Dom i Ogród > Wyposażenie wnętrz > Świece i świeczniki": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Akcesoria fotograficzne": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Aparaty analogowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Aparaty kompaktowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Bezlusterkowce": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Drony profesjonalne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Lustrzanki": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Obiektywy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Oświetlenie": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Pozostałe Fotografia": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Fotografia > Statywy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Gry i Konsole > Akcesoria gamingowe": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Elektronika > Gry i Konsole > Gry": {
+  "limit": null,
+  "dni": 30
+ },
+ "Elektronika > Gry i Konsole > Kolekcje graczy": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Elektronika > Gry i Konsole > Konsole": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Gry i Konsole > Pozostałe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Akcesoria komputerowe": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Drukarki i skanery": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Komputery stacjonarne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Laptopy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Monitory": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Oprogramowanie": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Podzespoły i części": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Pozostałe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Tablety": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Komputery > Urządzenia sieciowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Pozostała elektronika": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Smartwatche i opaski > Akcesoria i części": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Elektronika > Smartwatche i opaski > Opaski smart": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Smartwatche i opaski > Smartwatche": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt AGD > AGD do zabudowy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt AGD > AGD drobne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt AGD > AGD wolnostojące": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt AGD > Części i akcesoria do AGD": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Akcesoria": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Amplitunery": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Części": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Dyktafony": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Gramofony": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Głośniki i kolumny": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Magnetofony": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Mikrofony": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Pozostałe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Radia i CD": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Sprzęt estradowy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Słuchawki": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Wieże": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt audio > Wzmacniacze": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt video > Akcesoria i części": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt video > Blu ray i DVD": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt video > Dekodery": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt video > Kamery": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt video > Magnetowidy": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt video > Pozostałe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Sprzęt video > Projektory": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Telefony > Akcesoria": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Elektronika > Telefony > Smartfony i telefony komórkowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Telefony > Telefony stacjonarne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > Telefony > Złote numery": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > TV > Akcesoria": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Elektronika > TV > Części": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Elektronika > TV > Pozostałe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Elektronika > TV > Telewizory": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Firma i Przemysł > Biuro": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Firma i Przemysł > Części do maszyn i urządzeń": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Firma i Przemysł > Fotowoltaika": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Firma i Przemysł > Gastronomia": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Firma i Przemysł > Gastronomia > Przyczepy gastronomiczne": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Firma i Przemysł > Kontenery": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Firma i Przemysł > Maszyny i urządzenia": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Firma i Przemysł > Odzież robocza": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Firma i Przemysł > Pozostałe": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Firma i Przemysł > Sklepy i magazyny": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Firma i Przemysł > Sprzedam firmę": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Firma i Przemysł > Sprzedaż hurtowa": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Firma i Przemysł > Wyposażenie salonów": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Firma i Przemysł > Wyposażenie warsztatów": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Firma i Przemysł > Zbiorniki przemysłowe": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Książki i Muzyka > Filmy": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Książki i Muzyka > Instrumenty": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Książki i Muzyka > Książki": {
+  "limit": 30,
+  "dni": 30
+ },
+ "Książki i Muzyka > Materiały językowe": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Książki i Muzyka > Muzyka": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Książki i Muzyka > Pozostałe": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Moda": {
+  "limit": null,
+  "dni": 30
+ },
+ "Motoryzacja > Części motocyklowe": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Motoryzacja > Części samochodowe": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Motoryzacja > Opony i Felgi": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Motoryzacja > Pozostała motoryzacja": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Motoryzacja > Sprzęt car audio": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Motoryzacja > Wyposażenie i akcesoria": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Noclegi > Za granicą, niski sezon (wrzesień-marzec)": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Noclegi > Za granicą, wysoki sezon (kwiecień-sierpień)": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Rolnictwo > Akcesoria": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Rolnictwo > Części do maszyn rolniczych": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Rolnictwo > Giełda zwierząt": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Rolnictwo > Nawozy": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Rolnictwo > Opony rolnicze": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Rolnictwo > Pozostałe rolnicze": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Rolnictwo > Produkty rolne": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Rolnictwo > Ryneczek": {
+  "limit": 5,
+  "dni": 60
+ },
+ "Rolnictwo > Worki": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Rolnictwo > Zbiorniki": {
+  "limit": 2,
+  "dni": 60
+ },
+ "Rolnictwo > Środki ochrony roślin": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Rolnictwo > Żywność i suplementacja zwierząt": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Akcesoria jeździeckie": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Sport i Hobby > Bilety": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Sport i Hobby > Fitness": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Sport i Hobby > Gry planszowe": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Sport i Hobby > Hobby kreatywne": {
+  "limit": 20,
+  "dni": 30
+ },
+ "Sport i Hobby > Militaria": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Sport i Hobby > Pojazdy elektryczne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Pozostały sport i hobby": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Akcesoria rowerowe": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > BMX": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Części rowerowe": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Odzież i obuwie rowerowe": {
+  "limit": 4,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Pozostałe rowery": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Przyczepki rowerowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery crossowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery dziecięce": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery elektryczne": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery gravel": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery górskie": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery miejskie": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery składane": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery szosowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Rowery > Rowery trekkingowe": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Skating": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty drużynowe": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty ekstremalne > Lotnictwo": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty ekstremalne > Paralotnictwo": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty ekstremalne > Pozostałe": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty ekstremalne > Spadochroniarstwo": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty ekstremalne > Wspinaczka": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty indywidualne": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty towarzyskie": {
+  "limit": 20,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty walki": {
+  "limit": 20,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Akcesoria i części": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Kajaki, Pontony i Rowery wodne": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Kitesurfing": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Osprzęt żeglarski": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Pozostałe": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Pływanie": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Silniki": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Skutery wodne": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Sprzęt ratunkowy i asekuracyjny": {
+  "limit": 2,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > SUP": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Windsurfing": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty wodne > Łodzie i Jachty": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Sport i Hobby > Sporty zimowe": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Sport i Hobby > Społeczność": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Sport i Hobby > Turystyka": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Sport i Hobby > Wędkarstwo": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Makijaż": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Paznokcie": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Perfumy": {
+  "limit": 50,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Pielęgnacja ciała": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Pielęgnacja twarzy": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Pozostałe": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Witaminy i suplementy zdrowia": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Włosy": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Higiena jamy ustnej": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Korekcja wzroku": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Pozostałe": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Produkty CBD": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Sprzęt rehabilitacyjny i ortopedyczny": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Transport i poruszanie": {
+  "limit": 1,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Urządzenia do masażu": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Urządzenia medyczne": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zdrowie i Uroda > Zdrowie > Środki ochrony": {
+  "limit": 3,
+  "dni": 30
+ },
+ "Zwierzęta > Akcesoria dla zwierząt": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zwierzęta > Akwarystyka": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zwierzęta > Gryzonie i Króliki": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Zwierzęta > Karma i przysmaki": {
+  "limit": 10,
+  "dni": 30
+ },
+ "Zwierzęta > Konie": {
+  "limit": 1,
+  "dni": 90
+ },
+ "Zwierzęta > Koty > Koty do adopcji": {
+  "limit": null,
+  "dni": 30
+ },
+ "Zwierzęta > Koty > Koty rasowe": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Zwierzęta > Pozostałe zwierzęta": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Zwierzęta > Psy > Psy do adopcji": {
+  "limit": null,
+  "dni": 30
+ },
+ "Zwierzęta > Psy > Psy rasowe": {
+  "limit": 0,
+  "dni": 30
+ },
+ "Zwierzęta > Ptaki": {
+  "limit": 5,
+  "dni": 30
+ },
+ "Zwierzęta > Terrarystyka": {
+  "limit": 5,
+  "dni": 30
+ }
 }

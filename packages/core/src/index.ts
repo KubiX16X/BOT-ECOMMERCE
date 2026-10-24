@@ -5,7 +5,21 @@ export { renderListings, loadTemplates, buildKeywordsLine, type ListingTexts, ty
 export { formatTitle, formatSeriesTitles, titleCaseWord, TITLE_LIMITS, type FormattedTitle, type Platform } from "./text/titles";
 export { dashedPhone, deliveryText, parseDelivery, slugify } from "./text/format";
 export { generateImageSeries, planImageJobs, SHOT_FILE_NAMES, type GeneratedImage, type ImageFailure, type ImageKind } from "./images/series";
-export { getOlxLimits, findOlxLimit, setOlxLimit, type OlxLimits } from "./olx/limits";
+export {
+  getOlxLimits,
+  getOlxLimitTable,
+  getUserOlxLimits,
+  findOlxLimit,
+  findOlxCategory,
+  searchOlxCategories,
+  describeOlxLimit,
+  seriesForLimit,
+  setOlxLimit,
+  UNLIMITED_SERIES,
+  type OlxLimits,
+  type OlxLimit,
+  type OlxCategoryMatch,
+} from "./olx/limits";
 export { buildOfferZip, seriesImages, allegroImages } from "./pack/zip";
 export {
   generateOffer,

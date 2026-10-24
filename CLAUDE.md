@@ -24,6 +24,7 @@ Połączenie konta: `npm run allegro -- polacz` (link dla użytkownika), potem w
 - **Działalność nierejestrowana**: limit 10 813,50 zł przychodu na kwartał (2026).
 - **Bez prądu**: przy sprzedaży na odległość zwolnienie z VAT nie obejmuje m.in. urządzeń elektrycznych i elektroniki (art. 113 ust. 13 ustawy o VAT) → żadnych produktów z wtyczką, baterią lub ładowarką. Też bez: kosmetyków/perfum, części samochodowych, biżuterii z metali szlachetnych, alkoholu/e-papierosów.
 - **Dropshipping**: użytkownik kupuje u najtańszego sprzedawcy dopiero po wpłacie klienta, paczkę nadaje dostawca → na OLX tylko BLIK na telefon/przelew (bez Przesyłki OLX i pobrania), w opisie przewidywana dostawa zamiast „wysyłki 24h”.
+- **Limity OLX** (konto prywatne): pełna tabela w `config/olx-limity.json`; `--kategoria` przyjmuje pełną ścieżkę albo końcówkę („Koce”). Kategoria bez limitu → domyślnie 3 serie (koszt zdjęć). Wybieraj kategorię zgodną z produktem, nie „pod limit”.
 - **Zdjęcia**: jedno ogłoszenie OLX = jedno pomieszczenie, 6 zdjęć z różnych miejsc/kątów, bez białego tła. Białe tło tylko na Allegro (jako 1. zdjęcie). Liczba serii = liczba darmowych ogłoszeń w kategorii OLX.
 - **Perełki** (na razie ręcznie): cena zakupu 60–300 zł, różnica do bestsellerów ≥ 40–50 zł, zysk po prowizji i wysyłce ≥ 30 zł i ≥ 20%. Sezonowość kwartałów (IV kw.: święta, Black Friday).
 

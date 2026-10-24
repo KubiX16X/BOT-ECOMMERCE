@@ -6,7 +6,7 @@ import fs from "node:fs";
 import { parseArgs } from "node:util";
 import { ProductCopySchema } from "./copy/schema";
 import { DEMO_COPY } from "./demo";
-import { findOlxLimit } from "./olx/limits";
+import { describeOlxLimit, findOlxCategory, searchOlxCategories, seriesForLimit } from "./olx/limits";
 import { generateOffer, savePack } from "./generator";
 import { parseDelivery } from "./text/format";
 
@@ -35,11 +35,16 @@ if (!delivery) {
   process.exit(1);
 }
 
-const category = values.kategoria;
-const seriesCount = values.serie ? Number(values.serie) : (category && findOlxLimit(category)) || (values.demo ? 2 : 1);
-if (!values.serie && category && !findOlxLimit(category)) {
-  console.warn(`Nie znam limitu OLX dla "${category}" – generuję 1 serię. Podaj --serie N albo zapisz limit w data/olx-limity.json.`);
+// Kategoria OLX: pełna ścieżka albo jej końcówka ("Koce"); liczba serii z tabeli limitów OLX.
+const match = values.kategoria ? findOlxCategory(values.kategoria) : undefined;
+const category = match?.category ?? values.kategoria;
+if (values.kategoria && !match) {
+  const hints = searchOlxCategories(values.kategoria, 5).map((m) => m.category);
+  console.warn(`Nie znam kategorii OLX "${values.kategoria}".${hints.length ? ` Może: ${hints.join(" | ")}` : ""}`);
 }
+if (match) console.log(`Kategoria OLX: ${match.category} – ${describeOlxLimit(match.limit)}`);
+if (match?.limit.limit === 0) console.warn("W tej kategorii nie ma darmowych ogłoszeń – generuję 1 serię.");
+const seriesCount = values.serie ? Number(values.serie) : (match && seriesForLimit(match.limit)) || (values.demo ? 2 : 1);
 
 const pack = await generateOffer(
   {
