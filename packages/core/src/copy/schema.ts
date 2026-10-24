@@ -1,6 +1,7 @@
 import { z } from "zod";
 
-export const SHOT_KINDS = ["hero", "in_use", "context", "detail", "scale"] as const;
+/** Ujęcia jednej serii – wszystkie w tym samym pomieszczeniu (jedno ogłoszenie OLX). */
+export const SHOT_KINDS = ["hero", "in_use", "spot", "detail", "wide", "angle"] as const;
 export type ShotKind = (typeof SHOT_KINDS)[number];
 
 export const ProductCopySchema = z.object({
@@ -22,6 +23,7 @@ export const ProductCopySchema = z.object({
     series: z.array(
       z.object({
         theme: z.string(),
+        room: z.string(),
         shots: z.array(z.object({ kind: z.enum(SHOT_KINDS), scene: z.string() })),
       }),
     ),

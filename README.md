@@ -15,14 +15,15 @@ System do sprzedaży w modelu „kup taniej, sprzedaj drożej” na **OLX**, **A
 Wrzucasz 1–3 zdjęcia produktu i wklejasz nazwę + opis/parametry z oferty, z której kupujesz (może być z linkiem). Dostajesz:
 
 - **Serie zdjęć** – liczba serii = liczba darmowych ogłoszeń w kategorii OLX (np. grill = 2 → 2 ogłoszenia).
-  Każda seria: 5 scen w innym otoczeniu (okładka, w użyciu, inne zastosowanie, detal, skala) + wspólny packshot na białym tle = **6 zdjęć**.
-  Produkt jest brany 1:1 ze zdjęcia referencyjnego – AI zmienia tylko otoczenie.
+  Każde ogłoszenie OLX to **6 zdjęć z jednego pomieszczenia** z różnych miejsc i kątów (okładka, w użyciu, inne miejsce, detal, całe pomieszczenie, inny kąt), bez białego tła.
+  Kolejne ogłoszenia dzieją się w innych pomieszczeniach. Najpierw Gemini tworzy zdjęcie pustego pomieszczenia (nie trafia do paczki), a potem wszystkie ujęcia robi w tym samym wnętrzu, żeby ściany, meble i światło się zgadzały.
+  Dodatkowo 1 zdjęcie na białym tle – tylko do Allegro. Produkt jest brany 1:1 ze zdjęcia referencyjnego – AI zmienia tylko otoczenie.
 - **Tytuły** – każde słowo od wielkiej litery, ciąg fraz wyszukiwania, limit OLX 70 / Allegro 75 znaków (przycinane tylko na granicy słów).
   Każda seria OLX ma **inny tytuł** z innym zestawem fraz, żeby łapać więcej wyszukiwań.
 - **Opisy F-pattern** w Twoim układzie: kontakt → atuty ◼ → TYTUŁ → wstęp → DLACZEGO WARTO → SPECYFIKACJA → zdanie domykające → ZAWARTOŚĆ ZESTAWU → kontakt → WYSYŁKA I PŁATNOŚĆ → wezwanie → słowa kluczowe.
 - **Wersje per platforma**
   - OLX: telefon w formacie `6-6-6-0-7-9-1-8-1`, płatność BLIK na telefon / przelew, przewidywana dostawa, blok słów kluczowych.
-  - Allegro: bez telefonu, bez płatności poza Allegro i bez bloku słów kluczowych (regulamin Allegro); packshot jako 1. zdjęcie; dodatkowo wersja HTML pod API.
+  - Allegro: bez telefonu, bez płatności poza Allegro i bez bloku słów kluczowych (regulamin Allegro); zdjęcie na białym tle jako 1., potem zdjęcia z serii 1; dodatkowo wersja HTML pod API.
   - Revion: nazwa i opis HTML na stronę produktu.
 - **ZIP** z folderami `olx/seria-N`, `allegro`, `revion`, plikiem `CZYTAJ.txt` (uwagi do sprawdzenia) i `oferta.json`.
 
@@ -77,7 +78,7 @@ Opcjonalnie: `GEMINI_IMAGE_MODEL` (domyślnie `gemini-3.1-flash-image`; `gemini-
 
 ### Koszt jednej oferty (orientacyjnie)
 
-Przy 2 seriach: 11 zdjęć Gemini 3.1 Flash Image (ok. 0,07 USD/szt.) + teksty Claude ≈ **3–4 zł**. Tryb „Tylko teksty” – kilkadziesiąt groszy.
+Przy 2 seriach: 13 zdjęć + 2 zdjęcia pustych pomieszczeń z Gemini 3.1 Flash Image (ok. 0,07 USD/szt.) + teksty Claude ≈ **4–5 zł**. Tryb „Tylko teksty” – kilkadziesiąt groszy.
 
 Uwaga: API Claude ma osobne rozliczenie od subskrypcji Claude – środki doładowujesz w console.anthropic.com → Plans & Billing. Zdjęcia z API Gemini nie mają widocznego znaku wodnego.
 

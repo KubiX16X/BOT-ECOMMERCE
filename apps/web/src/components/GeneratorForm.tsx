@@ -5,7 +5,7 @@ import type { JobImage, JobView } from "@/lib/jobs";
 import { CopyButton } from "./CopyButton";
 
 const NEW_CATEGORY = "__new";
-const KIND_ORDER = ["hero", "in_use", "context", "detail", "scale", "packshot"];
+const KIND_ORDER = ["packshot", "hero", "in_use", "spot", "detail", "wide", "angle"];
 
 interface Props {
   limits: Record<string, number>;
@@ -191,7 +191,7 @@ export function GeneratorForm({ limits, maxSeries, setup }: Props) {
         </div>
 
         <p className="text-xs text-muted">
-          Zdjęcia AI: {seriesCount * 5 + 1} ({seriesCount} × 5 scen + packshot na białym tle).
+          Zdjęcia AI: {seriesCount * 6 + 1} ({seriesCount} × 6 w jednym pomieszczeniu + 1 na białym tle do Allegro).
         </p>
 
         <button
@@ -302,7 +302,7 @@ function Result({ jobId, result }: { jobId: string; result: NonNullable<JobView[
             ))}
             {result.failures.map((f) => (
               <li key={`${f.series}-${f.kind}`}>
-                Zdjęcie {f.series ? `seria ${f.series}` : "packshot"} / {f.kind}: {f.error}
+                Zdjęcie {f.series ? `seria ${f.series}` : "białe tło"} / {f.kind}: {f.error}
               </li>
             ))}
           </ul>
@@ -314,7 +314,7 @@ function Result({ jobId, result }: { jobId: string; result: NonNullable<JobView[
           <h3 className="font-semibold">
             OLX · ogłoszenie {s.series} <span className="text-muted">· {s.theme}</span>
           </h3>
-          <Gallery images={[...sortImages(result.images.filter((i) => i.series === s.series)), ...packshot]} />
+          <Gallery images={sortImages(result.images.filter((i) => i.series === s.series))} />
           <Field label="Tytuł" text={s.title.title} count={s.title.length} limit={s.title.limit} />
           <Field label="Opis" text={s.description} />
         </article>
@@ -322,7 +322,7 @@ function Result({ jobId, result }: { jobId: string; result: NonNullable<JobView[
 
       <article className="space-y-4 rounded-2xl border border-line bg-panel p-5">
         <h3 className="font-semibold">
-          Allegro <span className="text-muted">· packshot jako pierwsze zdjęcie</span>
+          Allegro <span className="text-muted">· pierwsze zdjęcie na białym tle</span>
         </h3>
         <Gallery images={[...packshot, ...sortImages(result.images.filter((i) => i.series === 1))]} />
         <Field label="Tytuł" text={listings.allegro.title.title} count={listings.allegro.title.length} limit={listings.allegro.title.limit} />

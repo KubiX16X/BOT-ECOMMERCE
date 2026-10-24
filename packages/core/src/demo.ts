@@ -61,22 +61,28 @@ export const DEMO_COPY: ProductCopy = {
     series: [
       {
         theme: "Salon wieczorem",
+        room:
+          "A cozy modern living room in the evening: warm white walls, light oak floor, a grey fabric sofa with a mustard throw, a round light oak coffee table in front of it, a low white sideboard with books and a plant along the opposite wall, a floor lamp with warm light, large window with sheer curtains and city lights outside.",
         shots: [
-          { kind: "hero", scene: "on a light oak coffee table in a cozy modern living room at dusk, warm lamp light, sofa softly blurred behind" },
-          { kind: "in_use", scene: "projecting a large bright mountain landscape onto a white living room wall, a person's hand holding the remote in the foreground" },
-          { kind: "context", scene: "on a sideboard next to plants and books, projecting abstract colorful shapes on the wall" },
-          { kind: "detail", scene: "close-up of the lens and rotating stand on a wooden surface, shallow depth of field, soft bokeh lights" },
-          { kind: "scale", scene: "wide shot of the living room with the projector on the table and a 100-inch image on the wall" },
+          { kind: "hero", scene: "the projector on the round coffee table, three-quarter front view of the lens, sofa softly blurred behind, eye-level camera, nothing projected" },
+          { kind: "in_use", scene: "camera behind and to the side of the projector on the coffee table: the lens points away from the camera at the empty wall, which shows a large bright mountain landscape; a hand holding the remote in the foreground" },
+          { kind: "spot", scene: "the projector standing on the white sideboard next to books and the plant, side view, medium distance, nothing projected" },
+          { kind: "detail", scene: "macro close-up of the lens and the top buttons, the product fills most of the frame, the room softly blurred behind" },
+          { kind: "wide", scene: "wide shot of the whole living room taken from behind the sofa: the projector on the coffee table is seen from behind, its lens pointing at the wall that shows a large bright landscape image" },
+          { kind: "angle", scene: "top-down view from above at about 60 degrees onto the coffee table with the projector tilted upwards on its stand" },
         ],
       },
       {
-        theme: "Sypialnia i ogród",
+        theme: "Sypialnia rano",
+        room:
+          "A calm Scandinavian bedroom in the morning: light beige walls, pale wooden floor, a bed with white linen and a knitted grey blanket, a round wooden bedside table with a small ceramic lamp, a big window with linen curtains letting in soft morning sunlight, a plant in the corner.",
         shots: [
-          { kind: "hero", scene: "on a bedside table in a calm Scandinavian bedroom, soft morning light" },
-          { kind: "in_use", scene: "tilted upwards on the bedside table, projecting a starry night sky onto the bedroom ceiling" },
-          { kind: "context", scene: "on a garden table on a terrace in the evening, projecting onto a white outdoor screen, string lights" },
-          { kind: "detail", scene: "close-up of the top buttons and the 180-degree stand hinge, neutral background" },
-          { kind: "scale", scene: "the projector held in one hand to show its compact size, bright neutral room background" },
+          { kind: "hero", scene: "the projector on the bedside table, three-quarter view, bed softly blurred behind, eye-level camera" },
+          { kind: "in_use", scene: "the projector on the bedside table tilted upwards on its stand, projecting a starry night sky onto the ceiling, seen from the side" },
+          { kind: "spot", scene: "the projector standing at the foot of the bed on the blanket, seen from the side, projecting onto the wall" },
+          { kind: "detail", scene: "close-up of the top buttons and the stand hinge, soft morning light" },
+          { kind: "wide", scene: "wide shot of the whole bedroom from the doorway with the projector on the bedside table" },
+          { kind: "angle", scene: "the projector held in one hand above the bed to show its compact size, bedroom in the background" },
         ],
       },
     ],

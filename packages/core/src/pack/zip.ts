@@ -14,13 +14,12 @@ export interface PackContents {
   warnings: string[];
 }
 
-/** Zdjęcia jednej serii w kolejności do wgrania: 5 scen + packshot. */
+/** Zdjęcia jednego ogłoszenia OLX: 6 ujęć z jednego pomieszczenia, bez białego tła. */
 export function seriesImages(images: GeneratedImage[], series: number): GeneratedImage[] {
-  const packshot = images.find((i) => i.kind === "packshot");
-  return [...images.filter((i) => i.series === series), ...(packshot ? [packshot] : [])];
+  return images.filter((i) => i.series === series);
 }
 
-/** Allegro: packshot na białym tle musi być pierwszy, potem sceny z serii 1. */
+/** Allegro: zdjęcie na białym tle musi być pierwsze, potem ujęcia z serii 1. */
 export function allegroImages(images: GeneratedImage[]): GeneratedImage[] {
   const packshot = images.find((i) => i.kind === "packshot");
   return [...(packshot ? [packshot] : []), ...images.filter((i) => i.series === 1)];
@@ -30,12 +29,12 @@ function readme(p: PackContents): string {
   const lines = [
     `PACZKA OFERTY: ${p.copy.productName}`,
     "",
-    "OLX – każdy folder olx/seria-N to osobne ogłoszenie:",
+    "OLX – każdy folder olx/seria-N to osobne ogłoszenie (6 zdjęć z jednego pomieszczenia, bez białego tła):",
     ...p.listings.olx.map((s) => `  Seria ${s.series} (${s.theme}): ${s.title.title}  [${s.title.length}/${s.title.limit}]`),
     "  Wgraj zdjęcia w kolejności nazw plików (01 = okładka), wklej tytul.txt i opis.txt.",
     "",
     `ALLEGRO: ${p.listings.allegro.title.title}  [${p.listings.allegro.title.length}/${p.listings.allegro.title.limit}]`,
-    "  Pierwsze zdjęcie to packshot na białym tle (wymóg Allegro). Opis bez telefonu i płatności poza Allegro.",
+    "  Pierwsze zdjęcie na białym tle (wymóg Allegro), potem zdjęcia z serii 1. Opis bez telefonu i płatności poza Allegro.",
     "",
     `REVION: ${p.listings.revion.title.title}`,
     "",
@@ -43,7 +42,7 @@ function readme(p: PackContents): string {
   ];
   if (p.warnings.length) lines.push("", "UWAGI – SPRAWDŹ PRZED WYSTAWIENIEM:", ...p.warnings.map((w) => `  - ${w}`));
   if (p.failures.length) {
-    lines.push("", "NIE UDAŁO SIĘ WYGENEROWAĆ:", ...p.failures.map((f) => `  - ${f.series ? `seria ${f.series}` : "packshot"} / ${f.kind}: ${f.error}`));
+    lines.push("", "NIE UDAŁO SIĘ WYGENEROWAĆ:", ...p.failures.map((f) => `  - ${f.series ? `seria ${f.series}` : "białe tło"} / ${f.kind}: ${f.error}`));
   }
   return lines.join("\n") + "\n";
 }
@@ -54,7 +53,7 @@ export async function buildOfferZip(p: PackContents): Promise<Buffer> {
   root.file("CZYTAJ.txt", readme(p));
   root.file(
     "oferta.json",
-    JSON.stringify({ meta: p.meta, copy: p.copy, listings: p.listings, warnings: p.warnings, failures: p.failures.map(({ prompt: _, ...f }) => f) }, null, 2),
+    JSON.stringify({ meta: p.meta, copy: p.copy, listings: p.listings, warnings: p.warnings, failures: p.failures.map(({ series, kind, error }) => ({ series, kind, error })) }, null, 2),
   );
 
   for (const s of p.listings.olx) {

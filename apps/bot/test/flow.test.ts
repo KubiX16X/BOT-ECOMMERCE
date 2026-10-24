@@ -80,7 +80,7 @@ describe("bot – pełna rozmowa", () => {
     expect(saved["Elektronika > Drukarki"]).toBe(2);
 
     await bot.handleUpdate(cb("dlv:2-4"));
-    expect(replies().at(-1)).toContain("Wygeneruję 11 zdjęć AI");
+    expect(replies().at(-1)).toContain("Wygeneruję 13 zdjęć AI");
 
     await bot.handleUpdate(cb("go:text"));
     await vi.waitFor(() => expect(calls.some((c) => c.method === "sendDocument")).toBe(true));

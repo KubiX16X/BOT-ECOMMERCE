@@ -86,7 +86,7 @@ function summary(d: Draft): string {
     `Serie (osobne ogłoszenia OLX): ${d.seriesCount}`,
     `Przewidywana dostawa: ${d.delivery?.min}–${d.delivery?.max} dni`,
     "",
-    `Wygeneruję ${images} zdjęć AI (${d.seriesCount} × 5 scen + packshot na białym tle).`,
+    `Wygeneruję ${images} zdjęć AI: ${d.seriesCount} × 6 zdjęć (każde ogłoszenie w jednym pomieszczeniu) + 1 na białym tle do Allegro.`,
   ].join("\n");
 }
 
@@ -350,7 +350,7 @@ async function sendPlain(ctx: Context, text: string) {
 
 async function sendPack(ctx: Context, pack: OfferPack): Promise<void> {
   for (const s of pack.listings.olx) {
-    await sendAlbum(ctx, seriesImages(pack.images, s.series), `<b>OLX – seria ${s.series}</b> (${escapeHtml(s.theme)})`);
+    await sendAlbum(ctx, seriesImages(pack.images, s.series), `<b>OLX – ogłoszenie ${s.series}</b> · ${escapeHtml(s.theme)}`);
     await ctx.reply(`<b>OLX seria ${s.series} – tytuł</b> (${s.title.length}/${s.title.limit}). Przytrzymaj wiadomość niżej, żeby skopiować:`, {
       parse_mode: "HTML",
     });

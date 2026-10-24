@@ -53,7 +53,7 @@ export interface OfferPack {
 export const MAX_SERIES = 10;
 
 export function estimateImageCount(seriesCount: number): number {
-  return seriesCount * 5 + 1;
+  return seriesCount * 6 + 1;
 }
 
 export async function generateOffer(input: GeneratorInput, opts: GenerateOptions = {}): Promise<OfferPack> {
@@ -90,8 +90,7 @@ export async function generateOffer(input: GeneratorInput, opts: GenerateOptions
   } else if (input.photos.length === 0) {
     warnings.push("Nie wysłano zdjęcia produktu – zdjęcia AI pominięte.");
   } else {
-    const total = estimateImageCount(seriesCount);
-    progress({ stage: "images", message: `Generuję zdjęcia (0/${total})…`, done: 0, total });
+    progress({ stage: "images", message: "Generuję zdjęcia…" });
     const result = await generateImageSeries(input.photos, copy.imagePlan, {
       apiKey: config.geminiApiKey,
       model: config.geminiImageModel,
