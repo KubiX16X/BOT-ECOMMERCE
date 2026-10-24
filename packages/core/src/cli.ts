@@ -1,8 +1,10 @@
 // Generator z linii poleceń, np.:
 //   npm run generuj -- --zdjecie foto.jpg --opis opis.txt --kategoria "Dom i Ogród > Ogród > Grille" --dostawa 2-4
 //   npm run generuj -- --demo            (przykładowy projektor bez kluczy API)
+//   npm run generuj -- --teksty teksty.json --zdjecie foto.jpg   (gotowe teksty zamiast API Claude)
 import fs from "node:fs";
 import { parseArgs } from "node:util";
+import { ProductCopySchema } from "./copy/schema";
 import { DEMO_COPY } from "./demo";
 import { findOlxLimit } from "./olx/limits";
 import { generateOffer, savePack } from "./generator";
@@ -20,8 +22,12 @@ const { values } = parseArgs({
     cena: { type: "string" },
     "bez-zdjec": { type: "boolean", default: false },
     demo: { type: "boolean", default: false },
+    teksty: { type: "string" },
   },
 });
+
+// Teksty napisane poza API (np. w rozmowie z Claude) – ten sam format co odpowiedź copywritera.
+const readyCopy = values.teksty ? ProductCopySchema.parse(JSON.parse(fs.readFileSync(values.teksty, "utf8"))) : values.demo ? DEMO_COPY : undefined;
 
 const delivery = parseDelivery(values.dostawa!);
 if (!delivery) {
@@ -47,7 +53,7 @@ const pack = await generateOffer(
     price: values.cena ? Number(values.cena.replace(",", ".")) : undefined,
   },
   {
-    copy: values.demo ? DEMO_COPY : undefined,
+    copy: readyCopy,
     skipImages: values["bez-zdjec"],
     onProgress: (p) => console.log(`• ${p.message}`),
   },

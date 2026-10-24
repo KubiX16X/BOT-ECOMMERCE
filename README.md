@@ -63,6 +63,16 @@ npm run generuj -- --zdjecie foto.jpg --opis opis.txt --kategoria "Dom i Ogród 
 #   --bez-zdjec     tylko teksty
 ```
 
+### Praca w rozmowie z Claude (bez płatnego API Claude)
+
+Teksty może napisać Claude w rozmowie (w ramach subskrypcji) jako plik JSON w formacie `ProductCopy` (`packages/core/src/copy/schema.ts`), a generator robi z nich zdjęcia Gemini i paczkę:
+
+```bash
+npm run generuj -- --teksty teksty.json --zdjecie foto.jpg --kategoria "Dom i Ogród > Ogród > Grille" --dostawa 2-4
+```
+
+Wymagany jest wtedy tylko `GEMINI_API_KEY`.
+
 ### Klucze w `.env`
 
 | Zmienna | Skąd |
