@@ -32,11 +32,15 @@ export interface ImageFailure extends ImageJob {
 
 const PRESERVE_RULES =
   "Keep the product identical to the reference photo: same shape, proportions, colors, materials, logos, labels, buttons and ports. " +
-  "Do not redesign, add or remove any part of the product. Do not add any text, captions, watermarks or extra logos to the image.";
+  "Do not redesign, add or remove any part of the product. Do not add any text, captions, watermarks or extra logos to the image. " +
+  "Use the reference photo only for the product itself: do not reuse its background, room, furniture or other objects. " +
+  "Prefer camera angles that show the same sides of the product as the reference photo. If a side that is not visible in the reference " +
+  "has to be shown, keep it plain and simple - never invent ports, buttons, labels or logos on it.";
 
 const STYLE =
   "Style: photorealistic commercial product photograph, full-frame camera, natural soft light, realistic shadows and reflections, " +
-  "sharp focus on the product, high detail, clean composition, the product clearly visible and recognisable.";
+  "sharp focus on the product, high detail, clean composition, the product clearly visible and recognisable. " +
+  "The scene must be physically plausible: e.g. a projector's lens points at the image it projects, so show it from the side.";
 
 const PACKSHOT_SCENE =
   "The product alone on a pure white (#FFFFFF) seamless studio background, centered, filling about 80% of the frame, " +

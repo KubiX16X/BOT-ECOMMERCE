@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { writeProductCopy } from "./copy/copywriter";
+import { normalizeImagePlan, writeProductCopy } from "./copy/copywriter";
 import { renderListings, type ListingTexts } from "./copy/listing";
 import type { ProductCopy } from "./copy/schema";
 import { getConfig } from "./env";
@@ -62,15 +62,15 @@ export async function generateOffer(input: GeneratorInput, opts: GenerateOptions
   const progress = opts.onProgress ?? (() => {});
 
   progress({ stage: "copy", message: "Piszę tytuły, opisy i plan zdjęć…" });
-  const copy =
-    opts.copy ??
-    (await writeProductCopy({
+  const copy = opts.copy
+    ? normalizeImagePlan(opts.copy, seriesCount)
+    : await writeProductCopy({
       photos: input.photos,
       productName: input.productName,
       sourceText: input.sourceText,
       olxCategory: input.olxCategory,
       seriesCount,
-    }));
+    });
 
   const listings = renderListings(copy, {
     seriesCount,

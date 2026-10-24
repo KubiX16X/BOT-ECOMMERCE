@@ -73,11 +73,13 @@ npm run generuj -- --zdjecie foto.jpg --opis opis.txt --kategoria "Dom i Ogród 
 | `SELLER_PHONE` | Twój numer (w opisie OLX pojawi się z myślnikami) |
 | `ADMIN_PASSWORD` | hasło do panelu `/admin` |
 
-Opcjonalnie: `GEMINI_IMAGE_MODEL` (domyślnie `gemini-2.5-flash-image` – tani; `gemini-3-pro-image-preview` wierniej oddaje detale produktu, ale jest droższy), `CLAUDE_MODEL`, `OLX_COMPETITOR_KEYWORDS=false` (wyłącza frazy typu „samsung freestyle zamiennik”).
+Opcjonalnie: `GEMINI_IMAGE_MODEL` (domyślnie `gemini-3.1-flash-image`; `gemini-3-pro-image` jeszcze wierniej oddaje detale, ale jest droższy; `gemini-2.5-flash-image` – starszy i tańszy), `CLAUDE_MODEL`, `OLX_COMPETITOR_KEYWORDS=false` (wyłącza frazy typu „samsung freestyle zamiennik”).
 
 ### Koszt jednej oferty (orientacyjnie)
 
-Przy 2 seriach: 11 zdjęć Gemini Flash (ok. 0,04 USD/szt.) + teksty Claude ≈ **2–3 zł**. Tryb „Tylko teksty” – kilkadziesiąt groszy.
+Przy 2 seriach: 11 zdjęć Gemini 3.1 Flash Image (ok. 0,07 USD/szt.) + teksty Claude ≈ **3–4 zł**. Tryb „Tylko teksty” – kilkadziesiąt groszy.
+
+Uwaga: API Claude ma osobne rozliczenie od subskrypcji Claude – środki doładowujesz w console.anthropic.com → Plans & Billing. Zdjęcia z API Gemini nie mają widocznego znaku wodnego.
 
 ## Wdrożenie
 

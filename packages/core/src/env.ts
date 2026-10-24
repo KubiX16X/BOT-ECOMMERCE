@@ -53,7 +53,7 @@ export function getConfig(): AppConfig {
     anthropicApiKey: blankToUndef(e.ANTHROPIC_API_KEY),
     claudeModel: blankToUndef(e.CLAUDE_MODEL) ?? "claude-opus-5-5",
     geminiApiKey: blankToUndef(e.GEMINI_API_KEY),
-    geminiImageModel: blankToUndef(e.GEMINI_IMAGE_MODEL) ?? "gemini-2.5-flash-image",
+    geminiImageModel: blankToUndef(e.GEMINI_IMAGE_MODEL) ?? "gemini-3.1-flash-image",
     sellerPhone: blankToUndef(e.SELLER_PHONE),
     sellerName: blankToUndef(e.SELLER_NAME),
     olxCompetitorKeywords: (e.OLX_COMPETITOR_KEYWORDS ?? "true").trim().toLowerCase() !== "false",
