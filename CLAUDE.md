@@ -13,6 +13,14 @@ Użytkownik NIE doładowuje API Claude. Teksty ofert piszesz Ty w rozmowie, zdj�
 
 Klucze są w `.env` (poza repo). W nowej sesji poproś o `GEMINI_API_KEY` i numer telefonu do `SELLER_PHONE`, skopiuj `.env.example` do `.env`. `ANTHROPIC_API_KEY` i Telegram nie są używane.
 
+## Butik „Prawie Nowe by Kuba” (Vinted, Szafa.pl)
+
+Ubrania i buty z hurtowni outletowych, sprzedaż na Vinted i Szafa.pl. Użytkownik zaczyna sesję własnym promptem startowym (kopia: `data/vinted/prompt-start.md`) – to on ustala zasady opisów.
+
+Zdjęcia AI robi Gemini: ubranie – manekin, model (cała sylwetka), model bliżej (ta sama osoba); buty – para, na nogach, stopy. Format 3:4, na tle użytkownika:
+`NODE_USE_ENV_PROXY=1 npm run vinted -- --zdjecie <przód> [--tlo <tło>] --typ ubranie|buty --nazwa "<nazwa>" --opis "<opis po angielsku>" --model "<kto nosi, po angielsku>"`.
+Poprawka jednego ujęcia: `--tylko 2` (nowa wersja zapisuje się obok jako `-v2`). Tło zapamiętuje się w `data/vinted/tlo.jpg`, wyniki są w `data/vinted/<data>-<nazwa>/`. Zdjęcia wysłane przez użytkownika w czacie są plikami (ścieżka „source:” przy obrazku). Przed wysłaniem porównaj każde zdjęcie AI z prawdziwym (logo, kolor, krój, detale). Pierwsze zdjęcie ogłoszenia zawsze prawdziwe, a w opisie dopisek o wizualizacji AI.
+
 ## Allegro API
 
 Strona allegro.pl blokuje automaty (403) – nie obchodzić. Oficjalne API: aplikacja „Revion” zarejestrowana w apps.developer.allegro.pl jako **device_code**, cel „na swoje potrzeby”, uprawnienia: `sale:offers:read/write`, `sale:settings:read`, `orders:read/write`, `billing:read`, `profile:read`, `messaging`, `payments:read`, `disputes`, `ratings`. Dane w `.env`: `ALLEGRO_CLIENT_ID`, `ALLEGRO_CLIENT_SECRET`, `ALLEGRO_USER_AGENT` (nagłówek User-Agent jest obowiązkowy w każdym zapytaniu – zły blokuje klucz). Autoryzacja: device flow – użytkownik dostaje link z kodem i klika „Zezwól”. Działa (sprawdzone 24.10.2026, konto Xkubix2115): `GET /me`, katalog produktów `GET /sale/products?phrase=...` (nazwy, parametry, zdjęcia). Nie działa bez weryfikacji Allegro: `GET /offers/listing` (cudze oferty i ceny) i cudze oferty po ID – 403.
