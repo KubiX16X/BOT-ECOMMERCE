@@ -15,7 +15,9 @@ Klucze są w `.env` (poza repo). W nowej sesji poproś o `GEMINI_API_KEY` i nume
 
 ## Butik „Prawie Nowe by Kuba” (Vinted, Szafa.pl)
 
-Ubrania i buty z hurtowni outletowych, sprzedaż na Vinted i Szafa.pl. Użytkownik zaczyna sesję własnym promptem startowym (kopia: `data/vinted/prompt-start.md`) – to on ustala zasady opisów.
+Ubrania i buty z hurtowni outletowych. Użytkownik zaczyna sesję własnym promptem startowym (kopia: `data/vinted/prompt-start.md`) – to on ustala zasady opisów.
+
+**Vinted (stan 11.2026):** zwykłe konto zabrania odsprzedaży z zyskiem (od I–II 2026 masowe blokady w PL), Vinted Pro w Polsce niedostępne, a zdjęcia mają być własne i nieobrobione. Towar z hurtowni → Szafa.pl (konto dla działalności nierejestrowanej), strona prawienowe.pages.dev, Facebook; na Vinted tylko prywatne rzeczy i bez wizualizacji AI. Książka wiedzy dla użytkownika: Claude Docs „Prawie Nowe by Kuba – książka sprzedawcy” (PDF w `data/ksiazka/`).
 
 Zdjęcia AI robi Gemini: ubranie – manekin, model (cała sylwetka), model bliżej (ta sama osoba); buty – para, na nogach, stopy. Format 3:4, na tle użytkownika:
 `NODE_USE_ENV_PROXY=1 npm run vinted -- --zdjecie <przód> [--tlo <tło>] --typ ubranie|buty --nazwa "<nazwa>" --opis "<opis po angielsku>" --model "<kto nosi, po angielsku>"`.
