@@ -23,6 +23,15 @@ Zdjęcia AI robi Gemini: ubranie – manekin, model (cała sylwetka), model bli�
 `NODE_USE_ENV_PROXY=1 npm run vinted -- --zdjecie <przód> [--tlo <tło>] --typ ubranie|buty --nazwa "<nazwa>" --opis "<opis po angielsku>" --model "<kto nosi, po angielsku>"`.
 Poprawka jednego ujęcia: `--tylko 2` (nowa wersja zapisuje się obok jako `-v2`). Tło zapamiętuje się w `data/vinted/tlo.jpg`, wyniki są w `data/vinted/<data>-<nazwa>/`. Zdjęcia wysłane przez użytkownika w czacie są plikami (ścieżka „source:” przy obrazku). Przed wysłaniem porównaj każde zdjęcie AI z prawdziwym (logo, kolor, krój, detale). Pierwsze zdjęcie ogłoszenia zawsze prawdziwe, a w opisie dopisek o wizualizacji AI.
 
+## Posty na Instagram i TikTok (@prawienowebykuba)
+
+Karuzele robisz Ty: piszesz plan JSON zgodny z `SocialPostSchema` (`packages/core/src/social/schema.ts`), zapisujesz w `data/posty/` (ścieżki zdjęć względem pliku planu) i uruchamiasz `npm run posty -- --plan data/posty/<plik>.json`. Program rysuje w Chromium slajdy Instagram 1080×1350 i TikTok 1080×1920 (marginesy na przyciski TikToka), zapisuje opisy z hasztagami i ZIP w `data/posty/<data>-<nazwa>/`; użytkownikowi wysyłasz ZIP i `podglad.jpg`. Czcionki i logo są w `config/fonts` i `config/marka`.
+
+- Slajdy: `cover` (prawdziwe zdjęcie z hakiem i znacznikami rozmiar/stan/cena albo okładka marki bez zdjęcia), `photo` (z etykietą: Tył, Metka, Wada, Wizualizacja AI), `info` (rozmiar, stan, wymiary, cena), `text` (porady, max 6 punktów), `cta`.
+- Oferta: okładka z prawdziwym zdjęciem → zdjęcia → info → cta. Poza ofertami: poradniki, kulisy, przedstawienie butiku (rozdział 16 książki).
+- Maks. 5 hasztagów na platformę (limit IG i TikTok); mieszanka: 1–2 duże (#secondhand, #ootd, na TikToku #dlaciebie), 2 marka/kategoria, 1 lokalny (#jeleniagora). Popularności nie mierzymy – nie obiecuj zasięgów.
+- Pierwsza linia opisu to hak, słowa kluczowe w opisie, na końcu pytanie lub wezwanie. Wizualizacje AI zawsze z etykietą i dopiskiem w opisie.
+
 ## Allegro API
 
 Strona allegro.pl blokuje automaty (403) – nie obchodzić. Oficjalne API: aplikacja „Revion” zarejestrowana w apps.developer.allegro.pl jako **device_code**, cel „na swoje potrzeby”, uprawnienia: `sale:offers:read/write`, `sale:settings:read`, `orders:read/write`, `billing:read`, `profile:read`, `messaging`, `payments:read`, `disputes`, `ratings`. Dane w `.env`: `ALLEGRO_CLIENT_ID`, `ALLEGRO_CLIENT_SECRET`, `ALLEGRO_USER_AGENT` (nagłówek User-Agent jest obowiązkowy w każdym zapytaniu – zły blokuje klucz). Autoryzacja: device flow – użytkownik dostaje link z kodem i klika „Zezwól”. Działa (sprawdzone 24.10.2026, konto Xkubix2115): `GET /me`, katalog produktów `GET /sale/products?phrase=...` (nazwy, parametry, zdjęcia). Nie działa bez weryfikacji Allegro: `GET /offers/listing` (cudze oferty i ceny) i cudze oferty po ID – 403.
