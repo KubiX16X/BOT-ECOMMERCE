@@ -29,7 +29,8 @@ Karuzele robisz Ty: piszesz plan JSON zgodny z `SocialPostSchema` (`packages/cor
 
 - Slajdy: `cover` (prawdziwe zdjęcie z hakiem i znacznikami rozmiar/stan/cena albo okładka marki bez zdjęcia), `photo` (z etykietą: Tył, Metka, Wada, Wizualizacja AI), `info` (rozmiar, stan, wymiary, cena), `text` (porady, max 6 punktów), `cta`.
 - Oferta: okładka z prawdziwym zdjęciem → zdjęcia → info → cta. Poza ofertami: poradniki, kulisy, przedstawienie butiku (rozdział 16 książki).
-- Maks. 5 hasztagów na platformę (limit IG i TikTok); mieszanka: 1–2 duże (#secondhand, #ootd, na TikToku #dlaciebie), 2 marka/kategoria, 1 lokalny (#jeleniagora). Popularności nie mierzymy – nie obiecuj zasięgów.
+- Maks. 5 hasztagów na platformę (limit IG i TikTok), pod duże zasięgi w Polsce (później świat): IG `#moda #modadamska #secondhand #stylizacja #ootd`, TikTok `#dlaciebie #moda #lumpeks #outfit #secondhand`; pierwsze miejsce może zająć 1 tag rzeczy, której szukają kupujący (#sweter, #kurtka, #jeansy, #buty, #blackfriday…; w ofercie marka). Bez lokalnych (#jeleniagora), ogólnych spoza mody (#polska) i niszowych (#porady, #pielegnacja – to kosmetyki). Popularności nie mierzymy – nie obiecuj zasięgów.
+- Zakupy zawsze na 3 sposoby (slajd CTA i opis): wiadomość na IG/WhatsAppie, prawienowe.pages.dev, Szafa.pl – linki w bio.
 - Pierwsza linia opisu to hak, słowa kluczowe w opisie, na końcu pytanie lub wezwanie. Wizualizacje AI zawsze z etykietą i dopiskiem w opisie.
 
 ## Panel Prawie Nowe (artefakt)
