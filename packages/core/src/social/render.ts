@@ -11,13 +11,16 @@ import { captionText, SLIDE_SIZES, slideHtml } from "./slides";
 // Rysuje slajdy w Chromium (Playwright jest preinstalowany w środowisku Claude) i pakuje je z opisami do ZIP-a.
 
 interface Page {
-  setViewportSize(size: { width: number; height: number }): Promise<void>;
   goto(url: string, options?: { waitUntil?: "load" | "networkidle" }): Promise<unknown>;
   evaluate(script: string): Promise<unknown>;
   screenshot(options: { path: string; type: "jpeg"; quality: number }): Promise<Buffer>;
 }
-interface Browser {
+interface Context {
   newPage(): Promise<Page>;
+  close(): Promise<void>;
+}
+interface Browser {
+  newContext(options: { viewport: { width: number; height: number }; deviceScaleFactor: number }): Promise<Context>;
   close(): Promise<void>;
 }
 
@@ -31,11 +34,16 @@ function chromium(): { launch(): Promise<Browser> } {
 
 export const PLATFORMS: SocialPlatform[] = ["instagram", "tiktok"];
 
+/** Dłuższy bok każdego slajdu w pikselach: 4K (Instagram 3072×3840, TikTok 2160×3840). */
+export const LONG_EDGE = 3840;
+
 export interface RenderOptions {
   /** Katalog, względem którego liczone są ścieżki zdjęć z planu. */
   baseDir: string;
   outDir: string;
   handle?: string;
+  /** Dłuższy bok slajdu w px (domyślnie 4K). */
+  longEdge?: number;
 }
 
 export interface RenderResult {
@@ -61,10 +69,11 @@ export async function renderSocialPost(post: SocialPost, opts: RenderOptions): P
 
   const browser = await chromium().launch();
   try {
-    const page = await browser.newPage();
     for (const platform of PLATFORMS) {
       const { width, height } = SLIDE_SIZES[platform];
-      await page.setViewportSize({ width, height });
+      // Układ liczony w 1080 px szerokości, a zrzut w gęstości dającej 4K na dłuższym boku – tekst i logo zostają ostre.
+      const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: (opts.longEdge ?? LONG_EDGE) / height });
+      const page = await context.newPage();
       fs.mkdirSync(path.join(opts.outDir, platform), { recursive: true });
       for (const [index, slide] of post.slides.entries()) {
         fs.writeFileSync(
@@ -82,9 +91,10 @@ export async function renderSocialPost(post: SocialPost, opts: RenderOptions): P
         await page.goto(pathToFileURL(tmp).href, { waitUntil: "load" });
         await page.evaluate("document.fonts.ready.then(() => window.fit && window.fit())");
         const file = path.join(opts.outDir, platform, `${String(index + 1).padStart(2, "0")}.jpg`);
-        await page.screenshot({ path: file, type: "jpeg", quality: 90 });
+        await page.screenshot({ path: file, type: "jpeg", quality: 92 });
         files[platform].push(file);
       }
+      await context.close();
     }
   } finally {
     await browser.close();

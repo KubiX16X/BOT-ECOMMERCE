@@ -34,4 +34,4 @@ export {
 export { DEMO_COPY } from "./demo";
 export { SocialPostSchema, normalizeHashtags, MAX_HASHTAGS, type SocialPost, type Slide, type SocialPlatform } from "./social/schema";
 export { captionText, slideHtml, SLIDE_SIZES } from "./social/slides";
-export { renderSocialPost, PLATFORMS } from "./social/render";
+export { renderSocialPost, PLATFORMS, LONG_EDGE } from "./social/render";
