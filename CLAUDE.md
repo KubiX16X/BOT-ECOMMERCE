@@ -34,7 +34,8 @@ Karuzele robisz Ty: piszesz plan JSON zgodny z `SocialPostSchema` (`packages/cor
 
 ## Panel Prawie Nowe (artefakt)
 
-https://claude.ai/artifact/2hGU1nJzVP4DMYS5Mosvwj – prywatny panel użytkownika: kalendarz 2 postów dziennie (od 9.11.2026: rano karuzela z grafiką, wieczorem film do nagrania albo oferta), licznik limitu kwartalnego, agenci AI, instrukcja „nowy towar”.
+https://claude.ai/artifact/2hGU1nJzVP4DMYS5Mosvwj – prywatny panel użytkownika: kalendarz 2 postów dziennie (od 9.11.2026: rano poradnik, wieczorem krótka karuzela albo oferta – użytkownik NIE nagrywa filmów, tylko posty), licznik limitu kwartalnego, agenci AI uruchamiani w panelu (capability `sample` z obrazami; przycisk „Otwórz w nowym czacie Claude” = `claude.ai/new?q=`), instrukcja „nowy towar”.
+- Publikacja panelu: `data/posty/miesiac/panel/panel.html` z `capabilities` {db, user, downloads, sample: {images: true}}.
 - Baza artefaktu: `posty/<data>-rano|<data>-wieczor` (date, slot, time, kind `karuzela|film|oferta`, title, igCaption, ttCaption, slides `p/<folder>/NN.jpg`, ttSlides `tt/<folder>/NN.jpg`, hook, shots), `status/<id>` (ig, tt – odhacza użytkownik), `sprzedaz` (date, item, amount, channel – wpisuje użytkownik).
 - Grafiki to pliki artefaktu w `p/` (IG) i `tt/` (TikTok); paczkę ZIP składa strona (artefakt nie serwuje .zip).
 - Nowy towar → oferta: plan JSON i `npm run posty`, skopiuj slajdy do `p/<data>-oferta/` i `tt/<data>-oferta/`, opublikuj je do artefaktu (z innej rozmowy: `Artifact` read, potem publish z `url`, w `files` tylko nowe pliki), potem `ArtifactData` set `posty/<najbliższy wolny wieczór>` z kind `oferta`. Treść miesiąca i skrypt: `data/posty/miesiac/` (lokalnie).
