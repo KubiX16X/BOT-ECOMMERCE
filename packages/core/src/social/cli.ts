@@ -29,5 +29,6 @@ const result = await renderSocialPost(post, { baseDir: path.dirname(planPath), o
 console.log(`Slajdy: ${post.slides.length} × Instagram i TikTok`);
 console.log(`Hasztagi IG: ${post.instagram.hashtags.map((h) => `#${h}`).join(" ") || "brak"}`);
 console.log(`Hasztagi TikTok: ${post.tiktok.hashtags.map((h) => `#${h}`).join(" ") || "brak"}`);
+if (post.tiktok.title) console.log(`Tytuł TikTok: ${post.tiktok.title}`);
 console.log(`Podgląd: ${result.preview}`);
 console.log(`Paczka: ${result.zipPath}`);

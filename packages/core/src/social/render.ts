@@ -34,7 +34,7 @@ function chromium(): { launch(): Promise<Browser> } {
 
 export const PLATFORMS: SocialPlatform[] = ["instagram", "tiktok"];
 
-/** Dłuższy bok każdego slajdu w pikselach: 4K (Instagram 3072×3840, TikTok 2160×3840). */
+/** Dłuższy bok każdego slajdu w pikselach: 4K (Instagram 4:5 = 3072×3840, TikTok 3:4 = 2880×3840). */
 export const LONG_EDGE = 3840;
 
 export interface RenderOptions {
@@ -102,6 +102,8 @@ export async function renderSocialPost(post: SocialPost, opts: RenderOptions): P
   }
 
   for (const platform of PLATFORMS) fs.writeFileSync(path.join(opts.outDir, `opis-${platform}.txt`), captionText(post, platform));
+  const ttTitle = post.tiktok.title ? path.join(opts.outDir, "tytul-tiktok.txt") : "";
+  if (ttTitle) fs.writeFileSync(ttTitle, `${post.tiktok.title}\n`);
   const preview = path.join(opts.outDir, "podglad.jpg");
   await contactSheet(files.instagram, preview);
 
@@ -110,6 +112,7 @@ export async function renderSocialPost(post: SocialPost, opts: RenderOptions): P
     for (const f of files[platform]) zip.file(`${platform}/${path.basename(f)}`, fs.readFileSync(f));
     zip.file(`opis-${platform}.txt`, fs.readFileSync(path.join(opts.outDir, `opis-${platform}.txt`)));
   }
+  if (ttTitle) zip.file("tytul-tiktok.txt", fs.readFileSync(ttTitle));
   zip.file("podglad.jpg", fs.readFileSync(preview));
   const zipPath = path.join(opts.outDir, `${path.basename(opts.outDir)}.zip`);
   fs.writeFileSync(zipPath, await zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" }));

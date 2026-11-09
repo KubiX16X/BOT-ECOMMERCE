@@ -33,6 +33,12 @@ describe("hasztagi", () => {
     expect(tooMany.success).toBe(false);
   });
 
+  it("tytuł TikToka ma najwyżej 90 znaków", () => {
+    const withTitle = (title: string) => ({ ...plan([]), tiktok: { caption: "Opis", title } });
+    expect(SocialPostSchema.safeParse(withTitle("Kamizelka Zara za 89 zł")).success).toBe(true);
+    expect(SocialPostSchema.safeParse(withTitle("x".repeat(91))).success).toBe(false);
+  });
+
   it("opis kończy się hasztagami", () => {
     const post = SocialPostSchema.parse(plan(["#Zara", "kamizelka"]));
     expect(captionText(post, "instagram")).toBe("Opis IG\n\n#zara #kamizelka\n");
@@ -49,9 +55,9 @@ describe("slajdy", () => {
     expect(html).toContain("width: 1080px; height: 1350px");
   });
 
-  it("TikTok 9:16 pokazuje całe zdjęcie na rozmytym tle", () => {
+  it("TikTok 3:4 pokazuje całe zdjęcie na rozmytym tle", () => {
     const html = slideHtml(post.slides[0]!, ctx("tiktok"));
-    expect(html).toContain("height: 1920px");
+    expect(html).toContain("width: 1080px; height: 1440px");
     expect(html).toContain('class="bg blur"');
     expect(html).toContain('class="fg" src="file:///zdjecia/foto.jpg"');
   });

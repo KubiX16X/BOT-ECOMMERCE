@@ -72,7 +72,8 @@ export const SocialPostSchema = z.object({
   name: z.string().min(1),
   slides: z.array(SlideSchema).min(2).max(20),
   instagram: platform(2200),
-  tiktok: platform(4000),
+  // TikTok ma osobne pole „tytuł” przy postach ze zdjęciami (do 90 znaków).
+  tiktok: platform(4000).extend({ title: z.string().min(1).max(90).optional() }),
 });
 
 export type SocialPost = z.infer<typeof SocialPostSchema>;

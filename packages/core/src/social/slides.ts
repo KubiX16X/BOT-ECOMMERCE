@@ -13,7 +13,7 @@ export interface SlideSize {
 
 export const SLIDE_SIZES: Record<SocialPlatform, SlideSize> = {
   instagram: { width: 1080, height: 1350, safeTop: 0, safeRight: 0, safeBottom: 0 },
-  tiktok: { width: 1080, height: 1920, safeTop: 170, safeRight: 150, safeBottom: 420 },
+  tiktok: { width: 1080, height: 1440, safeTop: 60, safeRight: 120, safeBottom: 120 },
 };
 
 export interface SlideContext {
@@ -89,7 +89,7 @@ const FIT_SCRIPT = `<script>window.fit = () => { for (const el of document.query
 
 function photoLayers(image: string, ctx: SlideContext): string {
   const url = esc(ctx.imageUrl(image));
-  // Na TikToku (9:16) całe zdjęcie na rozmytym tle, żeby nie obciąć rzeczy; na Instagramie (4:5) zdjęcie na cały kadr.
+  // Na TikToku (3:4, z marginesem na przyciski) całe zdjęcie na rozmytym tle, żeby nie obciąć rzeczy; na Instagramie (4:5) zdjęcie na cały kadr.
   return ctx.platform === "tiktok" ? `<img class="bg blur" src="${url}"><img class="fg" src="${url}">` : `<img class="bg" src="${url}">`;
 }
 
