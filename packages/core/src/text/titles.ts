@@ -16,7 +16,7 @@ const PRESERVED = [
   "UV", "IR", "AGD", "RTV", "PC", "PS4", "PS5", "XL", "XXL", "XS", "LTE", "5G", "4G", "DVD",
   "MP3", "MP4", "ANC", "TWS", "DIY", "BBQ", "LPG", "PVC", "ABS", "AAA", "AA", "DC", "AC", "EU",
   "IP65", "IP67", "IP68", "WiFi", "Wi-Fi", "iPhone", "iPad", "iMac", "iOS", "MacBook", "AirPods",
-  "AirPlay", "PlayStation", "YouTube", "TikTok", "mAh", "GHz", "MHz", "Hz", "kW", "kWh", "Wh",
+  "AirPlay", "PlayStation", "YouTube", "TikTok", "MagSafe", "RFID", "mAh", "GHz", "MHz", "Hz", "kW", "kWh", "Wh",
 ];
 const PRESERVED_MAP = new Map(PRESERVED.map((w) => [w.toLocaleLowerCase("pl"), w]));
 
@@ -46,7 +46,8 @@ function isAllCaps(word: string): boolean {
   return letters.length >= 2 && letters === letters.toLocaleUpperCase("pl") && letters !== letters.toLocaleLowerCase("pl");
 }
 
-export function titleCaseWord(word: string): string {
+/** shouting: cały tytuł pisany CAPSEM – długie słowa wielkimi literami to krzyk, nie marka. */
+export function titleCaseWord(word: string, shouting = true): string {
   if (!word) return word;
   const lower = word.toLocaleLowerCase("pl");
   const preserved = PRESERVED_MAP.get(lower);
@@ -62,12 +63,13 @@ export function titleCaseWord(word: string): string {
   }
 
   if (word.includes("-")) {
-    return word.split("-").map(titleCaseWord).join("-");
+    return word.split("-").map((w) => titleCaseWord(w, shouting)).join("-");
   }
 
   if (isAllCaps(word)) {
     const letters = lower.replace(/[^\p{L}]/gu, "");
     if (letters.length <= 3 && !SHORT_WORDS.has(letters)) return word; // skrót / marka, np. HP, JBL
+    if (!shouting) return word; // marka lub skrót w normalnym tytule, np. TUCCH, RFID
     return capitalizeFirst(lower);
   }
 
@@ -119,7 +121,11 @@ export interface FormattedTitle {
 
 export function formatTitle(raw: string, platform: Platform): FormattedTitle {
   const limit = TITLE_LIMITS[platform];
-  const words = dedupeWords(cleanTitle(raw).split(" ").filter(Boolean).map(titleCaseWord));
+  const raws = cleanTitle(raw).split(" ").filter(Boolean);
+  // Tytuł pisany CAPSEM (większość dłuższych słów wielkimi literami) zamieniamy na zwykły; w normalnym tytule słowa CAPSEM to marki i skróty.
+  const long = raws.filter((w) => w.replace(/[^\p{L}]/gu, "").length >= 4);
+  const shouting = long.filter(isAllCaps).length > long.length / 2;
+  const words = dedupeWords(raws.map((w) => titleCaseWord(w, shouting)));
   const title = fitToLimit(words, limit).join(" ");
   return { title, length: title.length, limit };
 }

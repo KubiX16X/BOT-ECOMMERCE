@@ -56,6 +56,11 @@ describe("formatTitle", () => {
     expect(t.title.endsWith(" Do")).toBe(false);
   });
 
+  it("marka i skróty CAPSEM w zwykłym tytule zostają", () => {
+    expect(formatTitle("Etui Z Klapką iPhone Air Portfel Na Karty RFID TUCCH Nowe", "olx").title).toBe("Etui Z Klapką iPhone Air Portfel Na Karty RFID TUCCH Nowe");
+    expect(formatTitle("MINI PROJEKTOR RZUTNIK ANDROID TUCCH", "olx").title).toBe("Mini Projektor Rzutnik Android Tucch");
+  });
+
   it("kilka modeli w jednym tytule: nie wycina Pro / Ultra", () => {
     const raw = "Etui Z Klapką iPhone 16 Pro Max 16 Pro Samsung S24 Ultra S25 Ultra";
     expect(formatTitle(raw, "olx").title).toBe(raw);
