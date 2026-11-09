@@ -84,12 +84,16 @@ export function cleanTitle(raw: string): string {
     .trim();
 }
 
-/** Usuwa powtórzone słowa (bez względu na wielkość liter), zostawia pierwsze wystąpienie. */
+// Człony nazw modeli („16 Pro Max”, „S24 Ultra”) – w tytule z kilkoma modelami powtarzają się celowo.
+const MODEL_SUFFIX = new Set(["pro", "max", "ultra", "plus", "mini", "lite", "air", "fe"]);
+
+/** Usuwa powtórzone słowa (bez względu na wielkość liter), zostawia pierwsze wystąpienie. Nie rusza członów nazw modeli. */
 export function dedupeWords(words: string[]): string[] {
   const seen = new Set<string>();
-  return words.filter((w) => {
+  return words.filter((w, i) => {
     const key = w.toLocaleLowerCase("pl");
     if (key.replace(/[^\p{L}]/gu, "").length < 3) return true;
+    if (MODEL_SUFFIX.has(key) || /\d/.test(words[i - 1] ?? "")) return true;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;

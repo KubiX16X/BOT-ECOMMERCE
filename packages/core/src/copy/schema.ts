@@ -16,6 +16,8 @@ export const ProductCopySchema = z.object({
   specs: z.array(z.object({ name: z.string(), value: z.string() })),
   closing: z.string(),
   setContents: z.array(z.string()),
+  /** Warianty w jednym ogłoszeniu (modele telefonu, kolory, rozmiary) – lista pod wstępem opisu. */
+  variants: z.object({ heading: z.string(), items: z.array(z.string()) }).optional(),
   keywords: z.array(z.string()),
   competitorKeywords: z.array(z.string()),
   imagePlan: z.object({

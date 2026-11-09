@@ -79,6 +79,7 @@ export function renderListings(copy: ProductCopy, opts: ListingOptions, template
     benefits: copy.benefits.map((b) => ({ feature: stripTrailingDot(b.feature), benefit: stripTrailingDot(b.benefit) })),
     specs: copy.specs.map((s) => ({ name: s.name.trim().replace(/:$/, ""), value: s.value.trim() })),
     closing: copy.closing.trim(),
+    variants: copy.variants?.items.length ? { heading: copy.variants.heading.trim(), items: copy.variants.items.map((v) => v.trim()) } : null,
     setContents: (copy.setContents.length ? copy.setContents : [copy.productName]).map((item, i) => ({ index: i + 1, item: item.trim() })),
   };
   const view = (title: string, extra: Record<string, unknown> = {}) => ({

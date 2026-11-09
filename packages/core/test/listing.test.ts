@@ -94,3 +94,16 @@ describe("towar na stanie", () => {
     expect(r.allegro.description).toContain("opakowanie po zwrocie");
   });
 });
+
+describe("warianty w jednym ogłoszeniu", () => {
+  it("lista modeli i kolorów pod wstępem, przed DLACZEGO WARTO", () => {
+    const copy = { ...DEMO_COPY, variants: { heading: "DOSTĘPNE MODELE I KOLORY:", items: ["iPhone 16 Pro – brązowy (2 szt.)", "Galaxy S25 Ultra – czarny (6 szt.)"] } };
+    for (const stock of [undefined, { returnedPackaging: false }]) {
+      const d = renderListings(copy, { ...opts, stock }, templates).olx[0]!.description;
+      const idx = order(d, ["DOSTĘPNE MODELE I KOLORY:", "iPhone 16 Pro – brązowy (2 szt.)", "Galaxy S25 Ultra – czarny (6 szt.)", "DLACZEGO WARTO:"]);
+      expect(idx.every((i) => i >= 0)).toBe(true);
+      expect([...idx].sort((a, b) => a - b)).toEqual(idx);
+    }
+    expect(renderListings(DEMO_COPY, opts, templates).olx[0]!.description).not.toContain("DOSTĘPNE");
+  });
+});
