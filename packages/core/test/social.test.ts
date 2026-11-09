@@ -58,6 +58,9 @@ describe("slajdy", () => {
   it("TikTok 3:4 pokazuje całe zdjęcie na rozmytym tle", () => {
     const html = slideHtml(post.slides[0]!, ctx("tiktok"));
     expect(html).toContain("width: 1080px; height: 1440px");
+    // Treść na środku: margines z lewej i prawej taki sam.
+    const inner = html.match(/\.inner \{[^}]*\}/)![0];
+    expect(inner.match(/right: (\d+)px/)![1]).toBe(inner.match(/left: (\d+)px/)![1]);
     expect(html).toContain('class="bg blur"');
     expect(html).toContain('class="fg" src="file:///zdjecia/foto.jpg"');
   });

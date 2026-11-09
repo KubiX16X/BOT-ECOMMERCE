@@ -5,15 +5,14 @@ import type { Slide, SocialPlatform, SocialPost } from "./schema";
 export interface SlideSize {
   width: number;
   height: number;
-  /** Margines na przyciski aplikacji: TikTok zasłania dół, prawy bok i zakładki u góry. */
-  safeTop: number;
-  safeRight: number;
-  safeBottom: number;
+  /** Margines na przyciski aplikacji – zawsze taki sam z obu stron, żeby treść była na środku. */
+  safeX: number;
+  safeY: number;
 }
 
 export const SLIDE_SIZES: Record<SocialPlatform, SlideSize> = {
-  instagram: { width: 1080, height: 1350, safeTop: 0, safeRight: 0, safeBottom: 0 },
-  tiktok: { width: 1080, height: 1440, safeTop: 60, safeRight: 120, safeBottom: 120 },
+  instagram: { width: 1080, height: 1350, safeX: 0, safeY: 0 },
+  tiktok: { width: 1080, height: 1440, safeX: 80, safeY: 60 },
 };
 
 export interface SlideContext {
@@ -44,14 +43,14 @@ function css(size: SlideSize): string {
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { width: ${size.width}px; height: ${size.height}px; overflow: hidden; font-family: 'Jost', sans-serif; color: var(--ink); background: var(--cream); }
   .slide { position: relative; width: 100%; height: 100%; overflow: hidden; }
-  .inner { position: absolute; top: ${size.safeTop + pad}px; right: ${size.safeRight + pad}px; bottom: ${size.safeBottom + pad}px; left: ${pad}px; display: flex; flex-direction: column; }
+  .inner { position: absolute; top: ${size.safeY + pad}px; right: ${size.safeX + pad}px; bottom: ${size.safeY + pad}px; left: ${size.safeX + pad}px; display: flex; flex-direction: column; }
   .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .bg.blur { filter: blur(48px) brightness(.8); transform: scale(1.15); }
-  .fg { position: absolute; top: ${size.safeTop}px; left: 0; right: 0; bottom: ${Math.round(size.safeBottom * 0.55)}px; width: 100%; height: calc(100% - ${size.safeTop + Math.round(size.safeBottom * 0.55)}px); object-fit: contain; }
+  .fg { position: absolute; top: ${size.safeY}px; left: 0; right: 0; bottom: ${size.safeY}px; width: 100%; height: calc(100% - ${2 * size.safeY}px); object-fit: contain; }
   .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 72%; background: linear-gradient(to bottom, rgba(30,43,69,0), rgba(30,43,69,.55) 45%, rgba(30,43,69,.94)); }
   .pill { display: inline-block; background: var(--accent); color: #fff; font-weight: 600; font-size: 28px; letter-spacing: .28em; text-transform: uppercase; padding: 10px 24px; border-radius: 999px; }
-  .counter { position: absolute; top: ${size.safeTop + 40}px; right: ${size.safeRight + 48}px; font-size: 28px; font-weight: 500; letter-spacing: .1em; padding: 8px 18px; border-radius: 999px; background: rgba(246,239,230,.9); color: var(--ink); }
-  .brand { position: absolute; top: ${size.safeTop + 36}px; left: 48px; display: flex; align-items: center; gap: 16px; }
+  .counter { position: absolute; top: ${size.safeY + 40}px; right: ${size.safeX + 48}px; font-size: 28px; font-weight: 500; letter-spacing: .1em; padding: 8px 18px; border-radius: 999px; background: rgba(246,239,230,.9); color: var(--ink); }
+  .brand { position: absolute; top: ${size.safeY + 36}px; left: ${size.safeX + 48}px; display: flex; align-items: center; gap: 16px; }
   .brand img { width: 88px; height: 88px; }
   .brand span { color: #fff; font-size: 30px; font-weight: 500; letter-spacing: .06em; text-shadow: 0 2px 10px rgba(0,0,0,.45); }
   .hook { font-family: 'Playfair Display', serif; font-weight: 600; line-height: 1.06; }
@@ -62,8 +61,8 @@ function css(size: SlideSize): string {
   .foot { margin-top: auto; display: flex; align-items: center; gap: 16px; font-size: 30px; font-weight: 500; letter-spacing: .06em; color: var(--ink); }
   .foot img { width: 72px; height: 72px; }
   .foot .swipe { margin-left: auto; color: var(--accent); font-weight: 600; }
-  .label { position: absolute; top: ${size.safeTop + 40}px; left: 48px; background: var(--accent); color: #fff; font-size: 32px; font-weight: 600; padding: 10px 26px; border-radius: 999px; letter-spacing: .04em; }
-  .watermark { position: absolute; left: 48px; bottom: ${size.safeBottom + 40}px; color: #fff; font-size: 28px; font-weight: 500; letter-spacing: .06em; text-shadow: 0 2px 10px rgba(0,0,0,.5); }
+  .label { position: absolute; top: ${size.safeY + 40}px; left: ${size.safeX + 48}px; background: var(--accent); color: #fff; font-size: 32px; font-weight: 600; padding: 10px 26px; border-radius: 999px; letter-spacing: .04em; }
+  .watermark { position: absolute; left: ${size.safeX + 48}px; bottom: ${size.safeY + 40}px; color: #fff; font-size: 28px; font-weight: 500; letter-spacing: .06em; text-shadow: 0 2px 10px rgba(0,0,0,.5); }
   .rows { margin-top: 36px; }
   .row { display: flex; justify-content: space-between; gap: 32px; padding: 20px 0; border-bottom: 2px solid #DDD3C4; font-size: 38px; }
   .row b { font-weight: 500; color: var(--quiet); font-size: 30px; letter-spacing: .14em; text-transform: uppercase; padding-top: 6px; white-space: nowrap; }
@@ -104,10 +103,10 @@ function body(slide: Slide, ctx: SlideContext): string {
   switch (slide.type) {
     case "cover": {
       if (slide.image) {
-        const bottom = size.safeBottom + 64;
+        const bottom = size.safeY + 64;
         return `${photoLayers(slide.image, ctx)}<div class="shade"></div>
           <div class="brand"><img src="${esc(ctx.logo.avatar)}"><span>${handle}</span></div>
-          <div style="position:absolute;left:64px;right:${size.safeRight + 64}px;bottom:${bottom}px;color:#fff">
+          <div style="position:absolute;left:${size.safeX + 64}px;right:${size.safeX + 64}px;bottom:${bottom}px;color:#fff">
             ${slide.kicker ? `<div class="pill">${esc(slide.kicker)}</div>` : ""}
             <div class="hook" data-fit="330" style="font-size:86px;margin-top:22px;text-shadow:0 2px 14px rgba(0,0,0,.3)">${esc(slide.hook)}</div>
             ${slide.sub ? `<div style="font-size:36px;margin-top:18px;opacity:.95">${esc(slide.sub)}</div>` : ""}
