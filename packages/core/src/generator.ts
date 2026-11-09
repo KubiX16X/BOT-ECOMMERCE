@@ -20,6 +20,8 @@ export interface GeneratorInput {
   seriesCount: number;
   delivery: { min: number; max: number };
   price?: number;
+  /** Towar na stanie (np. karton etui) zamiast dropshippingu; opcjonalnie opakowanie po zwrocie. */
+  stock?: { returnedPackaging: boolean };
 }
 
 export interface GeneratorProgress {
@@ -77,9 +79,14 @@ export async function generateOffer(input: GeneratorInput, opts: GenerateOptions
     delivery: input.delivery,
     sellerPhone: config.sellerPhone,
     competitorKeywords: config.olxCompetitorKeywords,
+    stock: input.stock,
   });
 
   const warnings = [...copy.warnings];
+  // Opakowanie po zwrocie: tekst produktu nie może obiecywać „fabrycznie nowego/zapakowanego”.
+  if (input.stock?.returnedPackaging && /fabryczn/i.test(JSON.stringify([copy.intro, copy.benefits, copy.specs, copy.closing]))) {
+    warnings.push("Opakowanie po zwrocie, a w opisie jest „fabrycznie…” – popraw stan (np. „Nowy, sprawdzony – opakowanie po zwrocie”).");
+  }
   let images: GeneratedImage[] = [];
   let failures: ImageFailure[] = [];
 

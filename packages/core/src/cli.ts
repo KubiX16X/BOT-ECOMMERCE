@@ -2,6 +2,7 @@
 //   npm run generuj -- --zdjecie foto.jpg --opis opis.txt --kategoria "Dom i Ogród > Ogród > Grille" --dostawa 2-4
 //   npm run generuj -- --demo            (przykładowy projektor bez kluczy API)
 //   npm run generuj -- --teksty teksty.json --zdjecie foto.jpg   (gotowe teksty zamiast API Claude)
+//   ... --na-stanie [--po-zwrocie]   (towar na stanie: wysyłka tego samego dnia, OLX GRATIS; opakowanie po zwrocie)
 import fs from "node:fs";
 import { parseArgs } from "node:util";
 import { ProductCopySchema } from "./copy/schema";
@@ -23,6 +24,8 @@ const { values } = parseArgs({
     "bez-zdjec": { type: "boolean", default: false },
     demo: { type: "boolean", default: false },
     teksty: { type: "string" },
+    "na-stanie": { type: "boolean", default: false },
+    "po-zwrocie": { type: "boolean", default: false },
   },
 });
 
@@ -56,6 +59,7 @@ const pack = await generateOffer(
     seriesCount,
     delivery,
     price: values.cena ? Number(values.cena.replace(",", ".")) : undefined,
+    stock: values["na-stanie"] || values["po-zwrocie"] ? { returnedPackaging: values["po-zwrocie"]! } : undefined,
   },
   {
     copy: readyCopy,

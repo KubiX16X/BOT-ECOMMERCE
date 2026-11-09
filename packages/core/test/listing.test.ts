@@ -60,3 +60,37 @@ describe("renderListings", () => {
     expect(buildKeywordsLine(DEMO_COPY, true)).toContain("samsung freestyle zamiennik");
   });
 });
+
+describe("towar na stanie", () => {
+  const stock = (returnedPackaging: boolean) =>
+    renderListings(DEMO_COPY, { ...opts, stock: { returnedPackaging } }, templates);
+
+  it("OLX: format sprzedawcy – wysyłka tego samego dnia, OLX GRATIS, pobranie, tagi", () => {
+    const d = stock(false).olx[0]!.description;
+    const idx = order(d, [
+      "KONTAKT TEL.: 6-6-6-0-7-9-1-8-1",
+      "• Dostawa z OLX: GRATIS",
+      "• Stan: Fabrycznie NOWY (Nigdy nieużywany)",
+      "fabrycznie zapakowany",
+      "DLACZEGO WARTO:",
+      "SPECYFIKACJA:",
+      "ZAWARTOŚĆ ZESTAWU:",
+      "JAK ZAMÓWIĆ?",
+      "• Dostawa za pobraniem: 35 zł",
+      "Tagi: ",
+      "* Zamawiając produkt",
+    ]);
+    expect(idx.every((i) => i >= 0)).toBe(true);
+    expect([...idx].sort((a, b) => a - b)).toEqual(idx);
+    expect(d).not.toMatch(/BLIK|Przewidywana dostawa|po zwrocie/);
+  });
+
+  it("opakowanie po zwrocie: bez „fabrycznie” w OLX i Allegro", () => {
+    const r = stock(true);
+    const d = r.olx[0]!.description;
+    expect(d).toContain("• Stan: NOWY, sprawdzony – opakowanie po zwrocie");
+    expect(d).toContain("jedynie opakowanie jest po zwrocie");
+    for (const text of [d, r.allegro.description, r.allegro.html]) expect(text).not.toMatch(/fabrycznie/i);
+    expect(r.allegro.description).toContain("opakowanie po zwrocie");
+  });
+});

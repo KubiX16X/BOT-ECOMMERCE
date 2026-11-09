@@ -8,6 +8,8 @@ import type { ProductCopy } from "./schema";
 
 export interface Templates {
   olx: string;
+  /** Towar na stanie (własny magazyn): wysyłka tego samego dnia, OLX GRATIS, pobranie. */
+  olxStock: string;
   allegro: string;
   allegroHtml: string;
   revionHtml: string;
@@ -17,6 +19,7 @@ export function loadTemplates(dir = path.join(getConfig().configDir, "szablony")
   const read = (name: string) => fs.readFileSync(path.join(dir, name), "utf8");
   return {
     olx: read("olx.mustache"),
+    olxStock: read("olx-stan.mustache"),
     allegro: read("allegro.mustache"),
     allegroHtml: read("allegro.html.mustache"),
     revionHtml: read("revion.html.mustache"),
@@ -28,6 +31,8 @@ export interface ListingOptions {
   delivery: { min: number; max: number };
   sellerPhone?: string;
   competitorKeywords: boolean;
+  /** Towar na stanie zamiast dropshippingu; returnedPackaging – opakowanie po zwrocie klienta. */
+  stock?: { returnedPackaging: boolean };
 }
 
 export interface SeriesListing {
@@ -68,6 +73,7 @@ export function renderListings(copy: ProductCopy, opts: ListingOptions, template
   const base = {
     phone: opts.sellerPhone ? true : false,
     phoneDashed: opts.sellerPhone ? dashedPhone(opts.sellerPhone) : "",
+    returned: opts.stock?.returnedPackaging ?? false,
     delivery,
     intro: copy.intro.trim(),
     benefits: copy.benefits.map((b) => ({ feature: stripTrailingDot(b.feature), benefit: stripTrailingDot(b.benefit) })),
@@ -94,7 +100,7 @@ export function renderListings(copy: ProductCopy, opts: ListingOptions, template
       series: i + 1,
       theme: copy.imagePlan.series[i]?.theme ?? `Seria ${i + 1}`,
       title,
-      description: tidy(Mustache.render(templates.olx, view(title.title, { keywordsLine }), {}, plain)),
+      description: tidy(Mustache.render(opts.stock ? templates.olxStock : templates.olx, view(title.title, { keywordsLine }), {}, plain)),
     };
   });
 

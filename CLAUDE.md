@@ -11,6 +11,8 @@ Użytkownik NIE doładowuje API Claude. Teksty ofert piszesz Ty w rozmowie, zdj�
 3. `npm run generuj -- --teksty data/teksty/<plik>.json --zdjecie <foto> --kategoria "<kategoria OLX>" --serie <N> --dostawa <min-max>`
 4. Wysyłasz użytkownikowi ZIP i podgląd zdjęć (SendUserFile).
 
+**Towar na stanie** (np. karton etui i szkieł na telefon): dodaj `--na-stanie` → opis OLX w sprawdzonym formacie użytkownika (`config/szablony/olx-stan.mustache`: KONTAKT TEL., Dostawa z OLX GRATIS, wysyłka tego samego dnia do 16:00, pobranie 35 zł, JAK ZAMÓWIĆ?, Tagi, zgoda na dane). Punkty „DLACZEGO WARTO” krótkie, jednym zdaniem (`benefit` pusty), w specs „Stan wizualny / Wady, jeśli występują”. Opakowanie po zwrocie: `--po-zwrocie` – stan „NOWY, sprawdzony – opakowanie po zwrocie”, nigdzie „fabrycznie” (program ostrzega). Etui i szkła: Elektronika > Telefony > Akcesoria (10 darmowych ogłoszeń / 30 dni) – kilka modeli telefonu w jednym ogłoszeniu; przy zdjęciach AI sprawdź wycięcie na aparat, pierwsze zdjęcie prawdziwe. Ładowarek i powerbanków nie sprzedajemy (zasada „bez prądu”).
+
 Klucze są w `.env` (poza repo). W nowej sesji poproś o `GEMINI_API_KEY` i numer telefonu do `SELLER_PHONE`, skopiuj `.env.example` do `.env`. `ANTHROPIC_API_KEY` i Telegram nie są używane.
 
 ## Butik „Prawie Nowe by Kuba” (Vinted, Szafa.pl)
