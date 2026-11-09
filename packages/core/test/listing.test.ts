@@ -97,10 +97,10 @@ describe("towar na stanie", () => {
 
 describe("warianty w jednym ogłoszeniu", () => {
   it("lista modeli i kolorów pod wstępem, przed DLACZEGO WARTO", () => {
-    const copy = { ...DEMO_COPY, variants: { heading: "DOSTĘPNE MODELE I KOLORY:", items: ["iPhone 16 Pro – brązowy (2 szt.)", "Galaxy S25 Ultra – czarny (6 szt.)"] } };
+    const copy = { ...DEMO_COPY, variants: { heading: "DOSTĘPNE MODELE I KOLORY:", items: ["iPhone 16 Pro – brązowy (2 szt.)", "Galaxy S25 Ultra – czarny (6 szt.)"], note: "Aby wybrać kolor – napisz." } };
     for (const stock of [undefined, { returnedPackaging: false }]) {
       const d = renderListings(copy, { ...opts, stock }, templates).olx[0]!.description;
-      const idx = order(d, ["DOSTĘPNE MODELE I KOLORY:", "iPhone 16 Pro – brązowy (2 szt.)", "Galaxy S25 Ultra – czarny (6 szt.)", "DLACZEGO WARTO:"]);
+      const idx = order(d, ["DOSTĘPNE MODELE I KOLORY:", "iPhone 16 Pro – brązowy (2 szt.)", "Galaxy S25 Ultra – czarny (6 szt.)", "Aby wybrać kolor – napisz.", "DLACZEGO WARTO:"]);
       expect(idx.every((i) => i >= 0)).toBe(true);
       expect([...idx].sort((a, b) => a - b)).toEqual(idx);
     }
