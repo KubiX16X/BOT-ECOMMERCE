@@ -15,7 +15,10 @@ Użytkownik NIE doładowuje API Claude. Teksty ofert piszesz Ty w rozmowie, zdj�
 
 Klucze są w `.env` (poza repo). W nowej sesji poproś o `GEMINI_API_KEY` i numer telefonu do `SELLER_PHONE`, skopiuj `.env.example` do `.env`. `ANTHROPIC_API_KEY` i Telegram nie są używane.
 
-## Butik „Prawie Nowe by Kuba” (Vinted, Szafa.pl)
+## Butik „CERVO boutique” (dawniej „Prawie Nowe by Kuba”; Vinted, Szafa.pl)
+
+Nazwa od 20.11.2026: **CERVO boutique** (wł. „jeleń”) – własna marka, niezwiązana z innymi (bez skojarzeń z Vero Moda itp.). Logo: poroże jelenia + „CERVO” + „boutique” (Allura), hasło „MARKOWE UBRANIA” – bez nazwy miasta. Pliki w `config/marka` (do slajdów) i `data/logo-cervo/` (wszystkie wersje + `build-cervo.mjs`). Stare nazwy (Prawie Nowe, @prawienowebykuba) zastępuj nową.
+
 
 Ubrania i buty z hurtowni outletowych. Użytkownik zaczyna sesję własnym promptem startowym (kopia: `data/vinted/prompt-start.md`) – to on ustala zasady opisów.
 
@@ -25,7 +28,7 @@ Zdjęcia AI robi Gemini: ubranie – manekin, model (cała sylwetka), model bli�
 `NODE_USE_ENV_PROXY=1 npm run vinted -- --zdjecie <przód> [--tlo <tło>] --typ ubranie|buty --nazwa "<nazwa>" --opis "<opis po angielsku>" --model "<kto nosi, po angielsku>"`.
 Poprawka jednego ujęcia: `--tylko 2` (nowa wersja zapisuje się obok jako `-v2`). Tło zapamiętuje się w `data/vinted/tlo.jpg`, wyniki są w `data/vinted/<data>-<nazwa>/`. Zdjęcia wysłane przez użytkownika w czacie są plikami (ścieżka „source:” przy obrazku). Przed wysłaniem porównaj każde zdjęcie AI z prawdziwym (logo, kolor, krój, detale). Pierwsze zdjęcie ogłoszenia zawsze prawdziwe, a w opisie dopisek o wizualizacji AI.
 
-## Posty na Instagram i TikTok (@prawienowebykuba)
+## Posty na Instagram i TikTok (konto CERVO, dawniej @prawienowebykuba)
 
 Karuzele robisz Ty: piszesz plan JSON zgodny z `SocialPostSchema` (`packages/core/src/social/schema.ts`), zapisujesz w `data/posty/` (ścieżki zdjęć względem pliku planu) i uruchamiasz `npm run posty -- --plan data/posty/<plik>.json`. Program rysuje w Chromium slajdy Instagram 4:5 i TikTok 3:4 (posty ze zdjęciami na TikToku muszą być 3:4; układ liczony w 1080 px, margines na przyciski TikToka – zawsze symetryczny, treść ma być na środku) – **zawsze w 4K**: IG 3072×3840, TikTok 2880×3840 (`LONG_EDGE` w `render.ts`, JPG q92); nie zmniejszaj jakości, zapisuje opisy z hasztagami, tytuł TikToka (`tiktok.title`, do 90 znaków → `tytul-tiktok.txt`) i ZIP w `data/posty/<data>-<nazwa>/`; użytkownikowi wysyłasz ZIP i `podglad.jpg`. Czcionki i logo są w `config/fonts` i `config/marka`.
 
