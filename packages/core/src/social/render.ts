@@ -34,6 +34,9 @@ function chromium(): { launch(): Promise<Browser> } {
 
 export const PLATFORMS: SocialPlatform[] = ["instagram", "tiktok"];
 
+/** Konto butiku na slajdach (Instagram; TikTok przejmie tę samą nazwę). */
+export const HANDLE = "@cervoboutique_";
+
 /** Dłuższy bok każdego slajdu w pikselach: 4K (Instagram 4:5 = 3072×3840, TikTok 3:4 = 2880×3840). */
 export const LONG_EDGE = 3840;
 
@@ -82,7 +85,7 @@ export async function renderSocialPost(post: SocialPost, opts: RenderOptions): P
             platform,
             index,
             total: post.slides.length,
-            handle: opts.handle ?? "@prawienowebykuba",
+            handle: opts.handle ?? HANDLE,
             fontsCss: asset("fonts", "fonts.css"),
             logo: { light: asset("marka", "logo-przezroczyste.svg"), dark: asset("marka", "logo-ciemne.svg"), avatar: asset("marka", "zdjecie-profilowe.svg") },
             imageUrl: (image) => pathToFileURL(resolveImage(image)).href,

@@ -28,7 +28,9 @@ Zdjęcia AI robi Gemini: ubranie – manekin, model (cała sylwetka), model bli�
 `NODE_USE_ENV_PROXY=1 npm run vinted -- --zdjecie <przód> [--tlo <tło>] --typ ubranie|buty --nazwa "<nazwa>" --opis "<opis po angielsku>" --model "<kto nosi, po angielsku>"`.
 Poprawka jednego ujęcia: `--tylko 2` (nowa wersja zapisuje się obok jako `-v2`). Tło zapamiętuje się w `data/vinted/tlo.jpg`, wyniki są w `data/vinted/<data>-<nazwa>/`. Zdjęcia wysłane przez użytkownika w czacie są plikami (ścieżka „source:” przy obrazku). Przed wysłaniem porównaj każde zdjęcie AI z prawdziwym (logo, kolor, krój, detale). Pierwsze zdjęcie ogłoszenia zawsze prawdziwe, a w opisie dopisek o wizualizacji AI.
 
-## Posty na Instagram i TikTok (konto CERVO, dawniej @prawienowebykuba)
+## Posty na Instagram i TikTok (CERVO boutique)
+
+Konta: Instagram **@cervoboutique_** (nazwa wyświetlana „Cervo Boutique”); TikTok ma już nazwę „Cervo Boutique”, ale adres @prawienowebykuba zmieni dopiero ok. 30.11.2026 (limit TikToka) – na tę samą nazwę. Na slajdach zawsze `HANDLE` z `render.ts` (@cervoboutique_).
 
 Karuzele robisz Ty: piszesz plan JSON zgodny z `SocialPostSchema` (`packages/core/src/social/schema.ts`), zapisujesz w `data/posty/` (ścieżki zdjęć względem pliku planu) i uruchamiasz `npm run posty -- --plan data/posty/<plik>.json`. Program rysuje w Chromium slajdy Instagram 4:5 i TikTok 3:4 (posty ze zdjęciami na TikToku muszą być 3:4; układ liczony w 1080 px, margines na przyciski TikToka – zawsze symetryczny, treść ma być na środku) – **zawsze w 4K**: IG 3072×3840, TikTok 2880×3840 (`LONG_EDGE` w `render.ts`, JPG q92); nie zmniejszaj jakości, zapisuje opisy z hasztagami, tytuł TikToka (`tiktok.title`, do 90 znaków → `tytul-tiktok.txt`) i ZIP w `data/posty/<data>-<nazwa>/`; użytkownikowi wysyłasz ZIP i `podglad.jpg`. Czcionki i logo są w `config/fonts` i `config/marka`.
 
@@ -39,7 +41,7 @@ Karuzele robisz Ty: piszesz plan JSON zgodny z `SocialPostSchema` (`packages/cor
 - TikTok: zawsze tytuł (chwytliwy hak, do 90 znaków) i dłuższy opis (lead, punkty, 3 sposoby zakupu, pytanie). W panelu przycisk „Kopiuj tytuł TikTok”, pole `ttTitle` w bazie.
 - Pierwsza linia opisu to hak, słowa kluczowe w opisie, na końcu pytanie lub wezwanie. Wizualizacje AI zawsze z etykietą i dopiskiem w opisie.
 
-## Panel Prawie Nowe (artefakt)
+## Panel CERVO (artefakt)
 
 https://claude.ai/artifact/2hGU1nJzVP4DMYS5Mosvwj – prywatny panel użytkownika: kalendarz 2 postów dziennie (od 9.11.2026: rano poradnik, wieczorem krótka karuzela albo oferta – użytkownik NIE nagrywa filmów, tylko posty), licznik limitu kwartalnego, agenci AI uruchamiani w panelu (capability `sample` z obrazami; przycisk „Otwórz w nowym czacie Claude” = `claude.ai/new?q=`), instrukcja „nowy towar”.
 - Publikacja panelu: `data/posty/miesiac/panel/panel.html` z `capabilities` {db, user, downloads, sample: {images: true}}.

@@ -1,6 +1,6 @@
 import type { Slide, SocialPlatform, SocialPost } from "./schema";
 
-// Slajdy jako strony HTML (rysuje je Chromium). Kolory i czcionki marki „Prawie Nowe by Kuba”.
+// Slajdy jako strony HTML (rysuje je Chromium). Kolory i czcionki marki „CERVO boutique”.
 
 export interface SlideSize {
   width: number;
